@@ -3,11 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
+    "start": "ng serve vertical-components-demo",
+    "build": "ng build vertical-components && npm run copy-lib-assets",
+    "build:demo": "ng build vertical-components-demo",
+    "test": "ng test vertical-components --code-coverage --watch false",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "npm publish dist/v-components --access public",
+    "copy-lib-assets": "copyfiles -f \"./projects/vertical-components/assets/*\" \"./dist/vertical-components\""
   },
   "private": true,
   "dependencies": {
@@ -29,10 +32,11 @@
     "@angular/cli": "~8.0.4",
     "@angular/compiler-cli": "~8.0.1",
     "@angular/language-service": "~8.0.1",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
+    "copyfiles": "^2.1.1",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
