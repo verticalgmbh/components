@@ -7,7 +7,7 @@
       "projectType": "library",
       "root": "projects/vertical-components",
       "sourceRoot": "projects/vertical-components/src",
-      "prefix": "lib",
+      "prefix": "vertical",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -43,7 +43,7 @@
       "schematics": {},
       "root": "projects/vertical-components-demo",
       "sourceRoot": "projects/vertical-components-demo/src",
-      "prefix": "app",
+      "prefix": "vertical",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
