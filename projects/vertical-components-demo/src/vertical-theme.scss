@@ -1,0 +1,81 @@
+@import '~@angular/material/theming';
+
+// Include the base styles for Angular Material core. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+@include mat-core();
+
+$vertical-purple: (
+    50: #d6c1eb,
+    100: #b087d9,
+    200: #945ccc,
+    300: #7136ab,
+    400: #612e93,
+    500: #52277c,
+    600: #432065,
+    700: #33184d,
+    800: #241136,
+    900: #140a1f,
+    A100: #d6c1eb,
+    A200: #b087d9,
+    A400: #612e93,
+    A700: #33184d,  
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: $black-87-opacity,
+        400: $black-87-opacity,
+        500: white,
+        600: white,
+        700: white,
+        800: $white-87-opacity,
+        900: $white-87-opacity,
+        A100: $black-87-opacity,
+        A200: white,
+        A400: white,
+        A700: white,
+  )
+);
+
+$vertical-green: (
+  50: #f8ffc1,
+  100: #efff75,
+  200: #e8ff3d,
+  300: #d8f400,
+  400: #bdd600,
+  500: #a2b800,
+  600: #879800,
+  700: #6c7a00,
+  800: #515b00,
+  900: #363d00,
+  A100: #f8ffb7,
+  A200: #ebff51,
+  A400: #cfea00,
+  A700: #b9d000,
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: $black-87-opacity,
+        400: $black-87-opacity,
+        500: $black-87-opacity,
+        600: white,
+        700: white,
+        800: $white-87-opacity,
+        900: $white-87-opacity,
+        A100: $black-87-opacity,
+        A200: white,
+        A400: $black-87-opacity,
+        A700: white,
+  )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$vertical-primary: mat-palette($vertical-purple);
+$vertical-accent: mat-palette($vertical-green);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$vertical-light-theme: mat-light-theme($vertical-primary, $vertical-accent);
+$vertical-dark-theme: mat-dark-theme($vertical-primary, $vertical-accent);

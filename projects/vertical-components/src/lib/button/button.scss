@@ -1,0 +1,6 @@
+@mixin vertical-button($background, $color, $font) {
+  .vertical-button {
+    color: $color;
+    background-color: $background;
+  }
+}

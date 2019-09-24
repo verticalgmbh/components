@@ -1,0 +1,25 @@
+@import './vertical-theme';
+@import '../../vertical-components/src/lib/button/button';
+
+$theme: $vertical-light-theme;
+@include angular-material-theme($theme);
+
+$primary: map-get($theme, primary);
+$accent: map-get($theme, accent);
+$warn: map-get($theme, warn);
+$background: map-get($theme, background);
+$foreground: map-get($theme, foreground);
+
+@include vertical-button(#52237e, #fff, Roboto);
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-size: 16px;
+  background: #fafafa;
+}
+
+* {
+  font-family: Roboto, sans-serif;
+}
