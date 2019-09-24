@@ -7,9 +7,6 @@ import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContainedButtonComponent {
-  @Input() color: 'accent' | 'primary';
-  @Input() class = '';
-
   @HostBinding('class.vertical-button')
   @HostBinding('class.vertical-contained-button')
   classes = true;
