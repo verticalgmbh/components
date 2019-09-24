@@ -10,7 +10,7 @@ $warn: map-get($theme, warn);
 $background: map-get($theme, background);
 $foreground: map-get($theme, foreground);
 
-@include vertical-button(#52237e, #fff, Roboto);
+@include vertical-button($primary);
 
 html,
 body {

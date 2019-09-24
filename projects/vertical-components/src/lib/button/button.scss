@@ -1,6 +1,9 @@
-@mixin vertical-button($background, $color, $font) {
-  .vertical-button {
-    color: $color;
-    background-color: $background;
-  }
+@import './contained-button/contained-button.component.scss';
+@import './text-button/text-button.component.scss';
+@import './outlined-button/outlined-button.component.scss';
+
+@mixin vertical-button($primary) {
+  @include contained-button($primary);
+  @include text-button($primary);
+  @include outlined-button($primary);
 }

@@ -5,11 +5,15 @@ import { MatRippleModule } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ContainedButtonComponent } from './contained-button/contained-button.component';
+import { OutlinedButtonComponent } from './outlined-button/outlined-button.component';
+import { TextButtonComponent } from './text-button/text-button.component';
 
 
 @NgModule({
   declarations: [
-    ContainedButtonComponent
+    ContainedButtonComponent,
+    OutlinedButtonComponent,
+    TextButtonComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +22,9 @@ import { ContainedButtonComponent } from './contained-button/contained-button.co
     MatRippleModule
   ],
   exports: [
-    ContainedButtonComponent
+    ContainedButtonComponent,
+    OutlinedButtonComponent,
+    TextButtonComponent
   ]
 })
 export class VerticalButtonModule { }

@@ -12,13 +12,15 @@ $vertical-purple: (
     400: #612e93,
     500: #52277c,
     600: #432065,
-    700: #33184d,
+    700: #7e3098,
     800: #241136,
-    900: #140a1f,
+    900: #52237e,
     A100: #d6c1eb,
     A200: #b087d9,
     A400: #612e93,
-    A700: #33184d,  
+    A700: #33184d,
+    A900: #52237e,
+    disabled: rgba(black, .38),
     contrast: (
         50: $black-87-opacity,
         100: $black-87-opacity,
@@ -34,6 +36,7 @@ $vertical-purple: (
         A200: white,
         A400: white,
         A700: white,
+        A900: rgba(black, .38),
   )
 );
 

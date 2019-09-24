@@ -1,6 +1,5 @@
 :host {
-  align-items: center;
-  border: none;
+  border: 0px none rgb(0, 0, 0);
   border-radius: 2px;
   cursor: pointer;
   display: block;
@@ -10,15 +9,47 @@
   letter-spacing: 0.3px;
   line-height: 1rem;
   min-width: 4.6875rem;
-  outline: none;
-  padding: 0;
+  outline: rgb(0, 0, 0) none 0px;
+  padding: 0px;
   position: relative;
   text-align: center;
-  text-decoration: none;
-  transition: background-color 0.2s cubic-bezier(0.35, 0, 0.25, 1);
+  text-decoration: none solid rgb(0, 0, 0);
+  transition: background-color 0.2s cubic-bezier(0.35, 0, 0.25, 1) 0s;
 }
 
 .mat-ripple {
-  padding: 0px 15px;
+  padding: 7px 15px 5px 15px;
+  height: 16px;
   margin: 0;
+}
+
+@mixin contained-button ($primary) {
+
+  .vertical-contained-button {
+    color: mat-color($primary, A700-contrast);
+    background-color: mat-color($primary, 900);
+  }
+
+  .vertical-contained-button:disabled {
+    background-color: rgba(mat-color($primary, 900), .2);
+    color: rgba(mat-color($primary, A700-contrast), .66);
+
+    .mat-ripple-element {
+      background-color: rgba(mat-color($primary, 900), 0);
+    }
+  }
+
+  .vertical-contained-button:not([disabled]):hover {
+    color: mat-color($primary, A700-contrast);
+    background-color: mix(mat-color($primary, 900), white, 92%)
+  }
+
+  .vertical-contained-button:not([disabled]):active {
+    color:mat-color($primary, A700-contrast);
+    background-color: mix(mat-color($primary, 900), white, 76%)
+  }
+
+  .vertical-contained-button:not([disabled]) .mat-ripple-element {
+    background-color: rgba(mat-color($primary, A700-contrast),.2)
+  }
 }

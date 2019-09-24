@@ -1,0 +1,56 @@
+:host {
+  align-items: center;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  height: 1.75rem;
+  letter-spacing: 0.3px;
+  line-height: 1rem;
+  min-width: 4.6875rem;
+  outline: none;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s cubic-bezier(0.35, 0, 0.25, 1);
+}
+
+.mat-ripple {
+  padding: 7px 15px 5px 15px;
+  height: 16px;
+  margin: 0;
+}
+
+@mixin text-button ($primary) {
+
+  .vertical-text-button {
+    color: mat-color($primary, 900);
+    background-color: rgba(white, 0);
+  }
+
+  .vertical-text-button:disabled {
+    background-color: rgba(mat-color($primary, 900), .12);
+    color: mat-color($primary, disabled);
+
+    .mat-ripple-element {
+      background-color: rgba(mat-color($primary, 900), 0);
+    }
+  }
+
+  .vertical-text-button:not([disabled]):hover {
+    color: mat-color($primary, 900);
+    background-color: rgba(mat-color($primary, 700), .04)
+  }
+
+  .vertical-text-button:not([disabled]):active {
+    color: mat-color($primary, 900);
+    background-color: rgba(mat-color($primary, 700), .12)
+  }
+
+  .vertical-text-button:not([disabled]) .mat-ripple-element {
+    background-color: rgba(mat-color($primary, 900), .12)
+  }
+}

@@ -1,21 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContainedButtonComponent } from './contained-button.component';
-import { By } from '@angular/platform-browser';
+import { OutlinedButtonComponent } from './outlined-button.component';
 
-describe('ContainedButtonComponent', () => {
-  let component: ContainedButtonComponent;
-  let fixture: ComponentFixture<ContainedButtonComponent>;
+describe('OutlinedButtonComponent', () => {
+  let component: OutlinedButtonComponent;
+  let fixture: ComponentFixture<OutlinedButtonComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContainedButtonComponent ]
+      declarations: [ OutlinedButtonComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ContainedButtonComponent);
+    fixture = TestBed.createComponent(OutlinedButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -23,13 +22,8 @@ describe('ContainedButtonComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
   describe('host element', () => {
 
-    it('should have border of 0px none rgb(0, 0, 0)', () => {
-      const style = getComputedStyle(fixture.debugElement.nativeElement);
-      expect(style.border).toBe('0px none rgb(0, 0, 0)');
-    });
     it('should have border radius of 2px', () => {
       const style = getComputedStyle(fixture.debugElement.nativeElement);
       expect(style.borderRadius).toBe('2px');
