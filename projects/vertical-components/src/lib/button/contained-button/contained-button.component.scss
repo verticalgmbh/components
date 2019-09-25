@@ -1,0 +1,34 @@
+:host {
+  border: 0px none rgb(0, 0, 0);
+}
+
+@mixin contained-button ($primary) {
+
+  .vertical-contained-button {
+    color: mat-color($primary, A700-contrast);
+    background-color: mat-color($primary, 900);
+  }
+
+  .vertical-contained-button:disabled {
+    background-color: rgba(mat-color($primary, 900), .2);
+    color: rgba(mat-color($primary, A700-contrast), .66);
+
+    .mat-ripple-element {
+      background-color: rgba(mat-color($primary, 900), 0);
+    }
+  }
+
+  .vertical-contained-button:not([disabled]):hover {
+    color: mat-color($primary, A700-contrast);
+    background-color: mix(mat-color($primary, 900), white, 92%)
+  }
+
+  .vertical-contained-button:not([disabled]):active {
+    color:mat-color($primary, A700-contrast);
+    background-color: mix(mat-color($primary, 900), white, 76%)
+  }
+
+  .vertical-contained-button:not([disabled]) .mat-ripple-element {
+    background-color: rgba(mat-color($primary, A700-contrast),.2)
+  }
+}

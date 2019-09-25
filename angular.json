@@ -1,0 +1,155 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "vertical-components": {
+      "projectType": "library",
+      "root": "projects/vertical-components",
+      "sourceRoot": "projects/vertical-components/src",
+      "prefix": "vertical",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/vertical-components/tsconfig.lib.json",
+            "project": "projects/vertical-components/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/vertical-components/src/test.ts",
+            "tsConfig": "projects/vertical-components/tsconfig.spec.json",
+            "karmaConfig": "projects/vertical-components/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/vertical-components/tsconfig.lib.json",
+              "projects/vertical-components/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "vertical-components-demo": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/vertical-components-demo",
+      "sourceRoot": "projects/vertical-components-demo/src",
+      "prefix": "vertical",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/vertical-components-demo",
+            "index": "projects/vertical-components-demo/src/index.html",
+            "main": "projects/vertical-components-demo/src/main.ts",
+            "polyfills": "projects/vertical-components-demo/src/polyfills.ts",
+            "tsConfig": "projects/vertical-components-demo/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/vertical-components-demo/src/favicon.ico",
+              "projects/vertical-components-demo/src/assets"
+            ],
+            "styles": [
+              "projects/vertical-components-demo/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/vertical-components-demo/src/environments/environment.ts",
+                  "with": "projects/vertical-components-demo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "vertical-components-demo:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "vertical-components-demo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "vertical-components-demo:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/vertical-components-demo/src/test.ts",
+            "polyfills": "projects/vertical-components-demo/src/polyfills.ts",
+            "tsConfig": "projects/vertical-components-demo/tsconfig.spec.json",
+            "karmaConfig": "projects/vertical-components-demo/karma.conf.js",
+            "assets": [
+              "projects/vertical-components-demo/src/favicon.ico",
+              "projects/vertical-components-demo/src/assets"
+            ],
+            "styles": [
+              "projects/vertical-components-demo/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/vertical-components-demo/tsconfig.app.json",
+              "projects/vertical-components-demo/tsconfig.spec.json",
+              "projects/vertical-components-demo/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/vertical-components-demo/e2e/protractor.conf.js",
+            "devServerTarget": "vertical-components-demo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "vertical-components-demo:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "defaultProject": "vertical-components"
+}
