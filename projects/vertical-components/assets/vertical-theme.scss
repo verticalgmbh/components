@@ -1,0 +1,66 @@
+@import '~@angular/material/theming';
+@import '../src/lib/button/button.scss';
+
+// Include the base styles for Angular Material core. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+@include mat-core();
+
+$vertical-purple: (
+  50: #f3e6f4,
+  100: #e1c1e4,
+  200: #cf99d4,
+  300: #bb71c2,
+  400: #ac54b4,
+  500: #9d3ba7,
+  600: #9036a1,
+  700: #7e3098,
+  800: #6e2b8f,
+  900: #52237e,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white
+  )
+);
+
+$vertical-green: (
+  50: #f4fae6,
+  100: #e4f1c1,
+  200: #d2e998,
+  300: #bee06b,
+  400: #add844,
+  500: #9dd10a,
+  600: #8cc100,
+  700: #75ad00,
+  800: #5e9900,
+  900: #317700,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: $black-87-opacity,
+    600: $black-87-opacity,
+    700: $black-87-opacity,
+    800: $black-87-opacity,
+    900: white
+  )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$vertical-primary: mat-palette($vertical-purple);
+$vertical-accent: mat-palette($vertical-green);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$vertical-light-theme: mat-light-theme($vertical-primary, $vertical-accent);
+$vertical-dark-theme: mat-dark-theme($vertical-primary, $vertical-accent);

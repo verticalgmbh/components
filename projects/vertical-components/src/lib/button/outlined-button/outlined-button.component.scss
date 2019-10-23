@@ -1,24 +1,23 @@
 :host {
-  border-width: 1px;
   border-style: solid;
+  border-width: 1px;
 
   .mat-ripple {
-    padding: 5px 1rem ;
+    padding: 5px 1rem;
   }
 }
 
-@mixin outlined-button ($primary) {
-
+@mixin outlined-button($primary) {
   .vertical-outlined-button {
+    background-color: rgba(mat-contrast($primary, 900), 0);
     border-color: mat-color($primary, 900);
     color: mat-color($primary, 900);
-    background-color: rgba(white, 0);
   }
 
   .vertical-outlined-button:disabled {
-    background-color: rgba(white, 0);
-    color: rgba(mat-color($primary, 900), .38);
-    border-color: rgba(mat-color($primary, 900), .38);
+    background-color: rgba(mat-contrast($primary, 900), 0);
+    border-color: rgba(mat-color($primary, 900), 0.38);
+    color: rgba(mat-color($primary, 900), 0.38);
 
     .mat-ripple-element {
       background-color: rgba(mat-color($primary, 900), 0);
@@ -27,18 +26,17 @@
 
   .vertical-outlined-button:not([disabled]):hover {
     color: mat-color($primary, 900);
-    background-color: rgba(mat-color($primary, 700), .04);
-    border-color: rgba(mat-color($primary, 900), .2);
-
+    background-color: rgba(mat-color($primary, 700), 0.04);
+    border-color: rgba(mat-color($primary, 900), 0.2);
   }
 
   .vertical-outlined-button:not([disabled]):active {
     color: mat-color($primary, 900);
-    background-color: rgba(mat-color($primary, 700), .12);
-    border-color: rgba(mat-color($primary, 900), .2);
+    background-color: rgba(mat-color($primary, 700), 0.12);
+    border-color: rgba(mat-color($primary, 900), 0.2);
   }
 
   .vertical-outlined-button:not([disabled]) .mat-ripple-element {
-    background-color: rgba(mat-color($primary, 700), .12)
+    background-color: rgba(mat-color($primary, 700), 0.12);
   }
 }

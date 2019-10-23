@@ -2,16 +2,15 @@
   border: 0px none rgb(0, 0, 0);
 }
 
-@mixin contained-button ($primary) {
-
+@mixin contained-button($primary) {
   .vertical-contained-button {
-    color: mat-color($primary, A700-contrast);
     background-color: mat-color($primary, 900);
+    color: mat-contrast($primary, 900);
   }
 
   .vertical-contained-button:disabled {
-    background-color: rgba(mat-color($primary, 900), .2);
-    color: rgba(mat-color($primary, A700-contrast), .66);
+    background-color: mix(mat-contrast($primary, 50), rgba(mat-color($primary, 900), 0.2), 0.12);
+    color: rgba(mat-contrast($primary, 900), 0.66);
 
     .mat-ripple-element {
       background-color: rgba(mat-color($primary, 900), 0);
@@ -19,16 +18,16 @@
   }
 
   .vertical-contained-button:not([disabled]):hover {
-    color: mat-color($primary, A700-contrast);
-    background-color: mix(mat-color($primary, 900), white, 92%)
+    background-color: mix(mat-color($primary, 900), mat-contrast($primary, 900), 92%);
+    color: mat-contrast($primary, 900);
   }
 
   .vertical-contained-button:not([disabled]):active {
-    color:mat-color($primary, A700-contrast);
-    background-color: mix(mat-color($primary, 900), white, 76%)
+    background-color: mix(mat-color($primary, 900), mat-contrast($primary, 900), 76%);
+    color: mat-contrast($primary, 900);
   }
 
   .vertical-contained-button:not([disabled]) .mat-ripple-element {
-    background-color: rgba(mat-color($primary, A700-contrast),.2)
+    background-color: rgba(mat-contrast($primary, 900), 0.2);
   }
 }
