@@ -2,7 +2,10 @@
 @import './outlined-button/outlined-button.component.scss';
 @import './text-button/text-button.component.scss';
 
-@mixin vertical-button($primary) {
+@mixin vertical-button-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, primary);
+
   @include contained-button($primary);
   @include outlined-button($primary);
   @include text-button($primary);

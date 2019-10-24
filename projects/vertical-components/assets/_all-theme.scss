@@ -1,0 +1,9 @@
+// Import all theming functionality
+@import '../../vertical-components/src/lib/button/button-theme';
+@import '../../vertical-components/src/lib/tabs/tabs-theme';
+
+// Create a theme
+@mixin vertical-theme($theme) {
+  @include vertical-button-theme($theme);
+  @include vertical-tabs-theme($theme);
+}
