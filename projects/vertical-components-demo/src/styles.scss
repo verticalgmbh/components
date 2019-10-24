@@ -1,5 +1,6 @@
 @import './vertical-theme';
 @import '../../vertical-components/src/lib/button/button';
+@import '../../vertical-components/src/lib/tabs/tab/tab.component';
 
 $theme: $vertical-light-theme;
 @include angular-material-theme($theme);
@@ -11,6 +12,7 @@ $background: map-get($theme, background);
 $foreground: map-get($theme, foreground);
 
 @include vertical-button($primary);
+@include vertical-tab($primary);
 
 html,
 body {
