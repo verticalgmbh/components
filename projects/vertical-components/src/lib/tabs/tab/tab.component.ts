@@ -1,13 +1,20 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, EventEmitter, HostBinding, HostListener } from '@angular/core';
 
 @Component({
   selector: '[vertical-tab]',
   templateUrl: './tab.component.html',
-  styleUrls: ['./tab.component.scss']
+  styleUrls: ['./tab.component.scss'],
+  host: {
+    class: 'vertical-tab'
+  }
 })
 export class TabComponent {
-  @HostBinding('class.vertical-tab')
+  onClick = new EventEmitter<TabComponent>();
   @HostBinding('class.vertical-tab-active')
-  classes = true;
+  isActive = false;
+
+  @HostListener('click')
+  private _onClick = () => this.onClick.emit(this);
+
   constructor() {}
 }
