@@ -4,7 +4,7 @@
 
 @mixin vertical-button-theme($theme) {
   $primary: map-get($theme, primary);
-  $accent: map-get($theme, primary);
+  $accent: map-get($theme, accent);
 
   @include contained-button($primary);
   @include outlined-button($primary);

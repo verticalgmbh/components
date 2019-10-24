@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
   selector: '[vertical-tab]',
@@ -6,6 +6,8 @@ import { Component, OnInit, HostBinding } from '@angular/core';
   styleUrls: ['./tab.component.scss']
 })
 export class TabComponent {
-  public active = false;
+  @HostBinding('class.vertical-tab')
+  @HostBinding('class.vertical-tab-active')
+  classes = true;
   constructor() {}
 }

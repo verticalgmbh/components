@@ -2,7 +2,7 @@
 
 @mixin vertical-tabs-theme($theme) {
   $primary: map-get($theme, primary);
-  $accent: map-get($theme, primary);
+  $accent: map-get($theme, accent);
 
   @include tab($primary);
   //@include tab-group($primary);
