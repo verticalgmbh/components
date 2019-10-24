@@ -2,16 +2,15 @@
   border: none;
 }
 
-@mixin text-button ($primary) {
-
+@mixin text-button($primary) {
   .vertical-text-button {
     color: mat-color($primary, 900);
-    background-color: rgba(white, 0);
+    background-color: rgba(mat-contrast($primary, 900), 0);
   }
 
   .vertical-text-button:disabled {
-    background-color: rgba(mat-color($primary, 900), .12);
-    color: mat-color($primary, disabled);
+    background-color: rgba(mat-color($primary, 900), 0.12);
+    color: rgba(mat-contrast($primary, 50), 0.38);
 
     .mat-ripple-element {
       background-color: rgba(mat-color($primary, 900), 0);
@@ -20,15 +19,15 @@
 
   .vertical-text-button:not([disabled]):hover {
     color: mat-color($primary, 900);
-    background-color: rgba(mat-color($primary, 700), .04)
+    background-color: rgba(mat-color($primary, 700), 0.04);
   }
 
   .vertical-text-button:not([disabled]):active {
     color: mat-color($primary, 900);
-    background-color: rgba(mat-color($primary, 700), .12)
+    background-color: rgba(mat-color($primary, 700), 0.12);
   }
 
   .vertical-text-button:not([disabled]) .mat-ripple-element {
-    background-color: rgba(mat-color($primary, 900), .12)
+    background-color: rgba(mat-color($primary, 900), 0.12);
   }
 }
