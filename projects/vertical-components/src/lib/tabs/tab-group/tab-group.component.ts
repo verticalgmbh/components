@@ -1,3 +1,5 @@
+// TODO: Error Handling, when no tab-component defined inside tab-group
+
 import { AfterViewInit, Component, ContentChildren, OnDestroy, QueryList, Input, AfterContentInit } from '@angular/core';
 import { takeWhile, tap } from 'rxjs/operators';
 
