@@ -1,6 +1,6 @@
 // TODO: Error Handling, when no tab-component defined inside tab-group
 
-import { AfterViewInit, Component, ContentChildren, OnDestroy, QueryList, Input, AfterContentInit } from '@angular/core';
+import { AfterViewInit, Component, ContentChildren, OnDestroy, QueryList, Input, AfterContentInit, ChangeDetectionStrategy } from '@angular/core';
 import { takeWhile, tap } from 'rxjs/operators';
 
 import { TabComponent } from '../tab/tab.component';
@@ -8,7 +8,8 @@ import { TabComponent } from '../tab/tab.component';
 @Component({
   selector: '[vertical-tab-group]',
   templateUrl: './tab-group.component.html',
-  styleUrls: ['./tab-group.component.scss']
+  styleUrls: ['./tab-group.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TabGroupComponent implements AfterViewInit, OnDestroy, AfterContentInit {
   private _isAlive = true;
@@ -16,7 +17,7 @@ export class TabGroupComponent implements AfterViewInit, OnDestroy, AfterContent
 
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
 
-  constructor() {}
+  constructor() { }
 
   ngAfterContentInit() {
     // Set first tab to active, if not defined
