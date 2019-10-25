@@ -29,13 +29,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve vertical-components-demo",
-    "build": "ng build vertical-components && npm run copy-lib-assets",
+    "build": "ng build vertical-components && npm run copy-lib-assets && npm run copy-readme",
     "build:demo": "ng build vertical-components-demo",
     "test": "ng test vertical-components --code-coverage --watch false",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "deploy": "npm publish dist/vertical-components --access public",
-    "copy-lib-assets": "copyfiles -f \"./projects/vertical-components/assets/**\" \"./dist/vertical-components\""
+    "copy-lib-assets": "copyfiles -f \"./projects/vertical-components/assets/**\" \"./dist/vertical-components\"",
+    "copy-readme": "copyfiles -f \"./README.md\" \"./dist/vertical-components\""
   },
   "private": true,
   "dependencies": {
