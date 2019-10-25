@@ -1,6 +1,31 @@
 {
   "name": "vertical-components",
   "version": "0.0.0",
+  "description": "vertical GmbH UI components",
+  "author": {
+    "name": "vertical GmbH"
+  },
+  "contributors": [
+    {
+      "name": "Markus Kollers",
+      "email": "m.kollers@vertical.de"
+    },
+    {
+      "name": "Lukas Macek",
+      "email": "l.macek@vertical.de"
+    },
+    {
+      "name": "Cederic Privat",
+      "email": "c.privat@vertical.de"
+    }
+  ],
+  "homepage": "https://github.com/verticalgmbh/components",
+  "bugs": "https://github.com/verticalgmbh/components/issues",
+  "repository": {
+    "type": "git",
+    "directory": "https://github.com/verticalgmbh/components.git"
+  },
+  "license": "GPL-3.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve vertical-components-demo",
