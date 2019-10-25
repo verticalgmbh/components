@@ -9,12 +9,12 @@ import { Component, EventEmitter, HostBinding, HostListener } from '@angular/cor
   }
 })
 export class TabComponent {
-  onClick = new EventEmitter<TabComponent>();
+  click = new EventEmitter<TabComponent>();
   @HostBinding('class.vertical-tab-active')
   isActive = false;
 
   @HostListener('click')
-  private _onClick = () => this.onClick.emit(this);
+  private _click = () => this.click.emit(this);
 
   constructor() {}
 }

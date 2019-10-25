@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ContentChildren, OnDestroy, QueryList } from '@angular/core';
+import { AfterViewInit, Component, ContentChildren, OnDestroy, QueryList, Input, AfterContentInit } from '@angular/core';
 import { takeWhile, tap } from 'rxjs/operators';
 
 import { TabComponent } from '../tab/tab.component';
@@ -8,18 +8,27 @@ import { TabComponent } from '../tab/tab.component';
   templateUrl: './tab-group.component.html',
   styleUrls: ['./tab-group.component.scss']
 })
-export class TabGroupComponent implements AfterViewInit, OnDestroy {
+export class TabGroupComponent implements AfterViewInit, OnDestroy, AfterContentInit {
   private _isAlive = true;
-  activeTab: TabComponent;
+  @Input() activeTab: TabComponent;
 
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
 
   constructor() {}
 
+  ngAfterContentInit() {
+    // Set first tab to active, if not defined
+    if (!this.activeTab) {
+      this.activeTab = this.tabs.toArray()[0];
+    }
+    this.activeTab.isActive = true;
+  }
+
   ngAfterViewInit() {
     const tabs = this.tabs.toArray();
+
     for (const tab of tabs) {
-      tab.onClick
+      tab.click
         .pipe(
           takeWhile(() => this._isAlive),
           tap((active: TabComponent) => (this.activeTab = active)),
