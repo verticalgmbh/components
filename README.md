@@ -1,27 +1,36 @@
 # VerticalComponents
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.4.
+This is the library of the vertical team's UI components.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```bash
+npm install @verticalgmbh/components
+```
 
-## Code scaffolding
+## Usage
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Vertical components can be used as attributes on normal html elements.
 
-## Build
+### Example
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```html
+<button vertical-contained-button>Button</button> <button vertical-contained-button disabled>Button</button>
+```
 
-## Running unit tests
+## Demo
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+You can find a demo of all components [here](https://components.vertical.de).
 
-## Running end-to-end tests
+## Features
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+| Feature   | Documentation   |
+|-----------|-----------------|
+| button    | [Docs][1]       |
+| tabs      | [Docs][2]       |
+| --------- | --------------- |
+| theming   | [Guide][3]      |
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+[1]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/src/lib/button/button.md
+[2]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/src/lib/tabs/tabs.md
+[3]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/assets/theming.md
