@@ -9,7 +9,7 @@
     align-items: center;
     box-shadow: none;
     box-sizing: border-box;
-    color: mat-contrast($primary, 50); // TODO: Is this the right color? In Design: #424242
+    color: mat-contrast($primary, 50);
     cursor: pointer;
     display: inline-flex;
     font-size: 0.875rem;
@@ -26,21 +26,19 @@
     background-color: rgba(mat-color($primary, 900), 0.1);
   }
 
-  .vertical-tab:hover {
+  .vertical-tab:not(.vertical-tab-active):hover {
     box-shadow: inset 0 -1px 0 rgba(mat-contrast($primary, 50), 0.12);
     background-color: rgba(mat-contrast($primary, 50), 0.04);
   }
 
   .vertical-tab-active {
     /* Using box-shadow instead of border-bottom to inset the indicator */
-    box-shadow: inset 0 -2px 0 mat-color($primary, 900);
+    box-shadow: inset 0 -2px 0 mat-color($primary, 900) !important;
     color: mat-color($primary, 900);
     font-weight: 500;
   }
 
   .vertical-tab-active:hover {
     background-color: rgba(mat-color($primary, 700), 0.04);
-    // TODO: DRY, find a way to fix it
-    box-shadow: inset 0 -2px 0 mat-color($primary, 900);
   }
 }
