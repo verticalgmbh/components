@@ -1,5 +1,5 @@
 {
-  "name": "@vertical/components",
+  "name": "@verticalgmbh/components",
   "version": "1.0.3",
   "peerDependencies": {
     "@angular/common": "^8.0.3",
