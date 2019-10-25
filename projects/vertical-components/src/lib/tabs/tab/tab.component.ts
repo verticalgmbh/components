@@ -15,7 +15,7 @@ export class TabComponent {
   isActive = false;
 
   @HostListener('click')
-  private _click = () => this.click.emit(this);
+  _click = () => this.click.emit(this);
 
   constructor() { }
 }
