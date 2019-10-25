@@ -1,6 +1,5 @@
-@import '~@angular/material/theming';
-@import './all-theme';
-@import './palette';
+@import "../all-theme";
+@import "../palette";
 
 @include mat-core();
 
@@ -8,12 +7,7 @@
 $vertical-primary: mat-palette($vertical-purple);
 $vertical-accent: mat-palette($vertical-green);
 
-// Create a theme
 $vertical-light-theme: mat-light-theme($vertical-primary, $vertical-accent);
-$vertical-dark-theme: mat-dark-theme($vertical-primary, $vertical-accent);
-
-// Select a theme
-$theme: $vertical-light-theme;
 
 // Include all theme styles for the components
-@include vertical-theme($theme);
+@include vertical-theme($vertical-light-theme);

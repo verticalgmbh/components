@@ -1,16 +1,4 @@
-@import '../../vertical-components/assets/vertical-theme';
-@import '../../vertical-components/src/lib/button/button';
-
-$theme: $vertical-light-theme;
-@include angular-material-theme($theme);
-
-$primary: map-get($theme, primary);
-$accent: map-get($theme, accent);
-$warn: map-get($theme, warn);
-$background: map-get($theme, background);
-$foreground: map-get($theme, foreground);
-
-@include vertical-button($primary);
+@import "../../vertical-components/assets/themes/vertical-light-theme.scss";
 
 html,
 body {
