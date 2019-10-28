@@ -1,5 +1,3 @@
-// TODO: Error Handling, when no tab-component defined inside tab-group
-
 import { AfterViewInit, Component, ContentChildren, OnDestroy, QueryList, Input, AfterContentInit, ChangeDetectionStrategy } from '@angular/core';
 import { takeWhile, tap } from 'rxjs/operators';
 
@@ -20,11 +18,17 @@ export class TabGroupComponent implements AfterViewInit, OnDestroy, AfterContent
   constructor() { }
 
   ngAfterContentInit() {
-    // Set first tab to active, if not defined
-    if (!this.activeTab) {
-      this.activeTab = this.tabs.toArray()[0];
+
+    // TODO: Error Handling, when no tab-component defined inside tab-group
+    try {
+      // Set first tab to active, if not defined
+      if (!this.activeTab) {
+        this.activeTab = this.tabs.toArray()[0];
+      }
+      this.activeTab.isActive = true;
+    } catch (error) {
+      console.log("No Tab");
     }
-    this.activeTab.isActive = true;
   }
 
   ngAfterViewInit() {
