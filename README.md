@@ -15,7 +15,8 @@ Vertical components can be used as attributes on normal html elements.
 ### Example
 
 ```html
-<button vertical-contained-button>Button</button> <button vertical-contained-button disabled>Button</button>
+<button vertical-contained-button>Button</button>
+<button vertical-contained-button disabled>Button</button>
 ```
 
 ## Demo
