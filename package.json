@@ -35,8 +35,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "deploy": "npm publish dist/vertical-components --access public",
-    "copy-lib-assets": "copyfiles -f \"./projects/vertical-components/assets/**\" \"./dist/vertical-components\"",
-    "copy-readme": "copyfiles -f \"./README.md\" \"./dist/vertical-components\""
+    "copy-lib-assets": "copyfiles -f \"./projects/vertical-components/assets/*\" \"./dist/vertical-components/assets\" && copyfiles -f \"./projects/vertical-components/assets/themes/*\" \"./dist/vertical-components/assets/themes\"",
+    "copy-readme": "copyfiles \"./README.md\" \"./dist/vertical-components\""
   },
   "private": true,
   "dependencies": {
