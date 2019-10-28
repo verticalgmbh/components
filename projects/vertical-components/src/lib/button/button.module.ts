@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatRippleModule } from '@angular/material/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ContainedButtonComponent } from './contained-button/contained-button.component';
 import { OutlinedButtonComponent } from './outlined-button/outlined-button.component';
@@ -16,7 +15,6 @@ import { TextButtonComponent } from './text-button/text-button.component';
   ],
   imports: [
     CommonModule,
-    BrowserAnimationsModule,
     MatRippleModule
   ],
   exports: [
