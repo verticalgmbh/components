@@ -1,3 +1,5 @@
+## Variants
+
 | Attribute                 | Description      |
 |---------------------------|------------------|
 | vertical-contained-button | Contained button |
