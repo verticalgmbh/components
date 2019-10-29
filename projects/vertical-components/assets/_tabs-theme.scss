@@ -1,4 +1,4 @@
-@import "./tab/tab.component.scss";
+@import "./tab-theme.scss";
 
 @mixin vertical-tabs-theme($theme) {
   $primary: map-get($theme, primary);

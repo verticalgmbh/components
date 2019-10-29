@@ -1,6 +1,6 @@
-@import './contained-button/contained-button.component.scss';
-@import './outlined-button/outlined-button.component.scss';
-@import './text-button/text-button.component.scss';
+@import "./contained-button-theme.scss";
+@import "./outlined-button-theme.scss";
+@import "./text-button-theme.scss";
 
 @mixin vertical-button-theme($theme) {
   $primary: map-get($theme, primary);
@@ -15,6 +15,7 @@
     align-items: center;
     cursor: pointer;
     display: block;
+    font-family: Roboto, sans-serif;
     font-size: 0.875rem;
     font-weight: 500;
     height: 1.75rem;
