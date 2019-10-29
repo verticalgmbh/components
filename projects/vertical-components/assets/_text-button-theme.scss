@@ -7,6 +7,7 @@
   .vertical-text-button:disabled {
     background-color: rgba(mat-color($primary, 900), 0.12);
     color: rgba(mat-contrast($primary, 50), 0.38);
+    cursor: default;
 
     .mat-ripple-element {
       background-color: rgba(mat-color($primary, 900), 0);

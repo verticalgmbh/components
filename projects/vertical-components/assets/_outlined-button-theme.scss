@@ -9,6 +9,7 @@
     background-color: rgba(mat-contrast($primary, 900), 0);
     border-color: rgba(mat-color($primary, 900), 0.38);
     color: rgba(mat-color($primary, 900), 0.38);
+    cursor: default;
 
     .mat-ripple-element {
       background-color: rgba(mat-color($primary, 900), 0);
