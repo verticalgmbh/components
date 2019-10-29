@@ -1,7 +1,7 @@
 // Import all theming functionality
 @import "~@angular/material/theming";
 @import "./button-theme";
-@import "./tabs-theme";
+@import "./tabs/tabs-theme";
 
 // Create a theme
 @mixin vertical-theme($theme) {
