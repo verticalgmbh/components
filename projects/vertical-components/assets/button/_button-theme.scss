@@ -1,6 +1,6 @@
-@import "./contained-button-theme.scss";
-@import "./outlined-button-theme.scss";
-@import "./text-button-theme.scss";
+@import "./contained-button.scss";
+@import "./outlined-button.scss";
+@import "./text-button.scss";
 
 @mixin vertical-button-theme($theme) {
   $primary: map-get($theme, primary);
