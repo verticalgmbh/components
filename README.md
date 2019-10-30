@@ -29,6 +29,11 @@ Install the vertical component library by running the following command:
 npm install @verticalgmbh/components
 ```
 
+Make sure that you have `@angular/cdk`, and `@angular/material` in your dependencies as well because we list these as peer dependencies:
+
+```bash
+npm install @angular/cdk @angular/material
+```
 ### 2. Import theme
 
 Import the theme file by including the followng line in your `styles.css`:
