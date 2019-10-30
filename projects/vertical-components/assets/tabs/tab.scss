@@ -1,20 +1,20 @@
 @mixin tab($primary) {
   .vertical-tab {
-    align-items: center;
-    box-shadow: none;
-    box-sizing: border-box;
     color: mat-contrast($primary, 50);
     cursor: pointer;
     display: inline-flex;
     font-family: Roboto, sans-serif;
     font-size: 0.875rem;
     font-weight: 300;
-    height: 2.0625rem;
-    justify-content: center;
     letter-spacing: 0.3px;
     line-height: 1rem;
     min-width: 3.125rem;
     user-select: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  }
+
+  .vertical-tab .mat-ripple {
+    padding: 0.53125rem 0.8125rem;
   }
 
   .vertical-tab .mat-ripple-element {
@@ -28,7 +28,7 @@
 
   .vertical-tab-active {
     /* Using box-shadow instead of border-bottom to inset the indicator */
-    box-shadow: inset 0 -2px 0 mat-color($primary, 900) !important;
+    box-shadow: inset 0 -2px 0 mat-color($primary, 900);
     color: mat-color($primary, 900);
     font-weight: 500;
   }
