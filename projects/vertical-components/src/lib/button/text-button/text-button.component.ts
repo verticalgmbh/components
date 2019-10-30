@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
 
 @Component({
-  selector: '[vertical-text-button]',
+  selector: 'button[vertical-text-button], a[vertical-text-button]',
   templateUrl: './text-button.component.html',
   styleUrls: ['./text-button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
