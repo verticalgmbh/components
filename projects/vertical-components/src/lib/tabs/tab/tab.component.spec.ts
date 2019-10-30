@@ -8,9 +8,9 @@ describe('TabComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TabComponent ]
+      declarations: [TabComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -22,4 +22,10 @@ describe('TabComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should emit component on _click()', () => {
+    spyOn(component.click, 'emit');
+    component._click();
+    expect(component.click.emit).toHaveBeenCalledWith(component);
+  })
 });
