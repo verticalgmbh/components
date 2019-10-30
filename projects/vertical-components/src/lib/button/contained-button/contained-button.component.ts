@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
 
 @Component({
-  selector: '[vertical-contained-button]',
+  selector: 'button[vertical-contained-button], a[vertical-contained-button]',
   templateUrl: './contained-button.component.html',
   styleUrls: ['./contained-button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

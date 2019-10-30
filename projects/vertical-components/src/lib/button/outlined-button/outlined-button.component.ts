@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
 
 @Component({
-  selector: '[vertical-outlined-button]',
+  selector: 'button[vertical-outlined-button], a[vertical-outlined-button]',
   templateUrl: './outlined-button.component.html',
   styleUrls: ['./outlined-button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
