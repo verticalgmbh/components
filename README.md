@@ -36,7 +36,7 @@ npm install @angular/cdk @angular/material
 ```
 ### 2. Import theme
 
-Import the theme file by including the followng line in your `styles.css`:
+Import the theme file by including the followng line in your `styles.scss`:
 
 ```css
 @import '~@verticalgmbh/components/assets/themes/vertical-light-theme.scss';
