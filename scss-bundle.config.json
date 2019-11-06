@@ -1,0 +1,7 @@
+{
+  "bundlerOptions": {
+    "entryFile": "./projects/vertical-components/src/_core/theming/_all-theme.scss",
+    "rootDir": ".",
+    "outFile": "./dist/vertical-components/_theming.scss"
+  }
+}

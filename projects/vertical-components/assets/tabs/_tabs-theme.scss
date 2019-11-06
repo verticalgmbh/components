@@ -1,8 +1,0 @@
-@import "./tab.scss";
-
-@mixin vertical-tabs-theme($theme) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-
-  @include tab($primary);
-}

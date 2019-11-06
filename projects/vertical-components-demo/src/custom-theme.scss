@@ -1,0 +1,13 @@
+@import "../../../dist/vertical-components/theming";
+@import "./custom-palette.scss";
+
+@include mat-core();
+
+// Define a theme
+$custom-primary: mat-palette($custom-purple);
+$custom-accent: mat-palette($custom-green);
+
+$custom-light-theme: mat-light-theme($custom-primary, $custom-accent);
+
+// Include all theme styles for the components
+@include vertical-theme($custom-light-theme);

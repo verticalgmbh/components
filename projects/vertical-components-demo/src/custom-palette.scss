@@ -1,0 +1,63 @@
+$dark-primary-text: rgba(black, 0.87);
+$dark-secondary-text: rgba(black, 0.87);
+$dark-disabled-text: rgba(black, 0.38);
+$dark-dividers: rgba(black, 0.12);
+$dark-focused: rgba(black, 0.12);
+$light-primary-text: white;
+$light-secondary-text: white;
+$light-disabled-text: rgba(white, 0.38);
+$light-dividers: rgba(white, 0.12);
+$light-focused: rgba(white, 0.12);
+
+$custom-light-theme-background: white;
+$custom-dark-theme-background: #f5f5f5;
+
+$custom-purple: (
+  50: #f3e6f4,
+  100: #e1c1e4,
+  200: #cf99d4,
+  300: #bb71c2,
+  400: #ac54b4,
+  500: #9d3ba7,
+  600: #9036a1,
+  700: #7e3098,
+  800: #6e2b8f,
+  900: blue,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    600: $light-primary-text,
+    500: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text
+  )
+);
+
+$custom-green: (
+  50: #f4fae6,
+  100: #e4f1c1,
+  200: #d2e998,
+  300: #bee06b,
+  400: #add844,
+  500: #9dd10a,
+  600: #8cc100,
+  700: #75ad00,
+  800: #5e9900,
+  900: #317700,
+  contrast: (
+    50: $dark-secondary-text,
+    100: $dark-secondary-text,
+    200: $dark-secondary-text,
+    300: $dark-secondary-text,
+    400: $dark-secondary-text,
+    500: $dark-secondary-text,
+    600: $dark-secondary-text,
+    700: $dark-secondary-text,
+    800: $dark-secondary-text,
+    900: $light-secondary-text
+  )
+);
