@@ -33,7 +33,7 @@
     "test": "ng test vertical-components --code-coverage --watch false",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "release": "sh release-script.sh"
+    "create-release": "sh release-script.sh"
   },
   "private": true,
   "dependencies": {
