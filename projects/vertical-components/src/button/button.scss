@@ -1,0 +1,43 @@
+@import "./contained-button/contained-button.component.scss";
+@import "./outlined-button/outlined-button.component.scss";
+@import "./text-button/text-button.component.scss";
+
+@mixin vertical-button-theme($theme) {
+  @include button-reset();
+  @include contained-button-theme($theme);
+  @include outlined-button-theme($theme);
+  @include text-button-theme($theme);
+}
+
+@mixin button-reset {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.vertical-button {
+  border-radius: 2px;
+  font-family: Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  line-height: 1rem;
+  min-width: 4.6875rem;
+  padding: 0.375rem 0.5rem;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.35, 0, 0.25, 1);
+
+  &:disabled {
+    cursor: default;
+  }
+
+  .mat-ripple {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}

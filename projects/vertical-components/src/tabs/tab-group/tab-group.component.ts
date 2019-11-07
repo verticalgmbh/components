@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ContentChildren, OnDestroy, QueryList, Input, AfterContentInit, ChangeDetectionStrategy } from '@angular/core';
+import { AfterViewInit, Component, ContentChildren, OnDestroy, Input, AfterContentInit, ChangeDetectionStrategy, QueryList } from '@angular/core';
 import { takeWhile, tap } from 'rxjs/operators';
 
 import { TabComponent } from '../tab/tab.component';

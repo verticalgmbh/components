@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostBinding, HostListener, ChangeDetectionStrategy } from '@angular/core';
+import { Component, EventEmitter, HostBinding, HostListener, ChangeDetectionStrategy, ElementRef } from '@angular/core';
 
 @Component({
   selector: '[vertical-tab]',
@@ -17,5 +17,5 @@ export class TabComponent {
   @HostListener('click')
   _click = () => this.click.emit(this);
 
-  constructor() { }
+  constructor(public elementRef: ElementRef) { }
 }
