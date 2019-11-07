@@ -1,7 +1,11 @@
 git checkout -b release-$1 develop
-echo "Changed main package.json to" npm version $1
+versionBmpPrj=$(npm version $1)
+echo "Changed project package.json to ${versionBmpMain}"
 cd projects/vertical-components
-echo "Changed components package.json to" npm version $1
+versionBmpLib=$(npm version $1)
+echo "Changed library package.json to ${versionBmpLib}"
 cd ../..
-echo "Create new commit\n"git commit -a -m "Bump version number to $1"
+commitMsg=$(git commit -a -m "Bump version number to $1")
+echo "Create new commit"
+echo $commitMsg
 echo "Release script done"
