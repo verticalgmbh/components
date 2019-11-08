@@ -29,11 +29,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve vertical-components-demo",
-    "build": "ng build vertical-components && node build-script.ts",
+    "build": "ng build vertical-components && node scripts/build.ts",
+    "build:demo": "ng build vertical-components-demo",
     "test": "ng test vertical-components --code-coverage --watch false",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "create-release": "sh release-script.sh"
+    "deploy": "npm publish dist/vertical-components --access public",
+    "create-release": "sh scripts/create-release.sh"
   },
   "private": true,
   "dependencies": {
