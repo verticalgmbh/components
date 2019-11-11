@@ -10,11 +10,13 @@
 }
 
 @mixin button-reset {
-  border: none;
-  cursor: pointer;
-  outline: none;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
+  :host {
+    border: none;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 .vertical-button {

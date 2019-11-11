@@ -35,8 +35,11 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "deploy": "npm publish dist/vertical-components --access public",
-    "create-release": "sh scripts/create-release.sh",
-    "create-hotfix": "sh scripts/create-hotfix.sh"
+    "create-release": "bash ./scripts/create-release.sh",
+    "create-release-test": "node ./scripts/create-release.ts",
+    "create-hotfix": "bash ./scripts/create-hotfix.sh",
+    "create-hotfix-test": "node ./scripts/create-hotfix.ts",
+    "build-test": "bash ./scripts/build.sh"
   },
   "private": true,
   "dependencies": {
@@ -50,7 +53,9 @@
     "@angular/platform-browser": "~8.2.13",
     "@angular/platform-browser-dynamic": "~8.2.13",
     "@angular/router": "~8.2.13",
+    "chalk": "^3.0.0",
     "fs-extra": "^8.1.0",
+    "inquirer": "^7.0.0",
     "node-sass": "^4.13.0",
     "rxjs": "~6.4.0",
     "scss-bundle": "^3.0.1",

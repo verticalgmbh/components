@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd $(dirname ${0})/..
 git checkout -b release-$1 develop
 versionBmpPrj=$(npm version $1)
 echo "Changed project package.json to ${versionBmpPrj}"

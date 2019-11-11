@@ -1,6 +1,8 @@
 // Require fs-extra for copy-function
 const fs = require('fs-extra');
-const exec = require('child_process').exec;
+
+// Require child_process.exec to execute bash commands
+var exec = require('child_process').exec;
 
 // Run build script
 console.log('\x1b[34m%s\x1b[0m', '\nRunning build script\n');
