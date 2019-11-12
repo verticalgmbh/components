@@ -1,6 +1,6 @@
 {
   "name": "vertical-components",
-  "version": "0.0.1",
+  "version": "2.0.0",
   "description": "vertical GmbH UI components",
   "author": {
     "name": "vertical GmbH"
@@ -29,17 +29,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve vertical-components-demo",
-    "build": "ng build vertical-components && node scripts/build.ts",
+    "build": "ts-node scripts/build.ts",
     "build:demo": "ng build vertical-components-demo",
     "test": "ng test vertical-components --code-coverage --watch false",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "deploy": "npm publish dist/vertical-components --access public",
-    "create-release": "bash ./scripts/create-release.sh",
-    "create-release-test": "node ./scripts/create-release.ts",
-    "create-hotfix": "bash ./scripts/create-hotfix.sh",
-    "create-hotfix-test": "node ./scripts/create-hotfix.ts",
-    "build-test": "bash ./scripts/build.sh"
+    "create-branch": "ts-node ./scripts/create-branch.ts"
   },
   "private": true,
   "dependencies": {
@@ -81,7 +77,7 @@
     "karma-jasmine-html-reporter": "^1.4.0",
     "ng-packagr": "^5.4.0",
     "protractor": "~5.4.0",
-    "ts-node": "~7.0.0",
+    "ts-node": "^7.0.1",
     "tsickle": "^0.37.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"

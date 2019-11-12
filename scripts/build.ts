@@ -1,47 +1,37 @@
-// Require fs-extra for copy-function
-const fs = require('fs-extra');
+#!/usr/bin/env node
 
-// Require child_process.exec to execute bash commands
-var exec = require('child_process').exec;
+var runCmd = require('./script-functions').runCmd;
 
-// Run build script
-console.log('\x1b[34m%s\x1b[0m', '\nRunning build script\n');
+// Require 'chalk' for console text formatting
+var chalk = require('chalk');
+
 buildScript();
 
 async function buildScript() {
-  try {
-    // Bundle scss files
-    console.log('\x1b[34m%s\x1b[0m', 'Bundling scss files');
-    await new Promise((resolve, reject) => {
-      exec('scss-bundle', (err, stdout) => {
-        if (err) {
-          reject(err);
-          return;
-        }
-        resolve(stdout.trim());
-      })
-    });
+  console.log("--------------------------------------------------------------------------------\n" +
+    "Building release package\n" +
+    "--------------------------------------------------------------------------------");
+  console.log("");
 
-    // Prebuilt theme css files
-    console.log('\x1b[34m%s\x1b[0m', 'Prebuilding theme files');
-    await new Promise((resolve, reject) => {
-      exec('node-sass ./projects/vertical-components/assets/themes/ --importer=node_modules/node-sass-tilde-importer -o ./dist/vertical-components/prebuilt-themes/', (err, stdout) => {
-        if (err) {
-          reject(err);
-          return;
-        }
-        resolve(stdout.trim());
-      })
-    });
+  // Build angular packages with ng-packagr
+  await runCmd(`ng build vertical-components`, "Building angular package");
 
-    // Copy README.md
-    console.log('\x1b[34m%s\x1b[0m', 'Copying README.md');
-    await fs.copy('./README.md', './dist/vertical-components/README.md');
+  // Bundle scss files into _theming.scss file
+  await runCmd(`scss-bundle`, "Bundling scss files");
 
-    // Built package
-    console.log('\x1b[32m%s\x1b[0m', '\nBuilt package\n');
-  }
-  catch (err) {
-    console.error('\x1b[31m%s\x1b[0m', err);
-  }
+  // Prebuild theme files
+  var src = "./projects/vertical-components/assets/themes/";
+  var dest = "./dist/vertical-components/prebuilt-themes/";
+  var imp = "--importer=node_modules/node-sass-tilde-importer";
+  await runCmd(`node-sass ${src} ${imp} -o ${dest}`, "Prebuilding theme files");
+
+  // Copy Readme from project directory to dist folder
+  src = "./README.md"
+  dest = "./dist/vertical-components/"
+  await runCmd(`cp ${src} ${dest}`, "Copying README.md");
+
+  // Release package built
+  console.log(chalk.green("\n--------------------------------------------------------------------------------\n" +
+    "Release package built\n" +
+    "--------------------------------------------------------------------------------"));
 }
