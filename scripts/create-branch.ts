@@ -85,9 +85,11 @@ async function createBranch() {
 
     // Create branch
     if (branchType === 'release') {
+      await runCmd(`git checkout develop`, `Switching to develop branch`);
       await runCmd(`git checkout -b ${branchType}-${newVersion} develop`, `Creating ${branchType} branch`);
     }
     else {
+      await runCmd(`git checkout master`, `Switching to master branch`);
       await runCmd(`git checkout -b ${branchType}-${newVersion} master`, `Creating ${branchType} branch`);
     }
 
