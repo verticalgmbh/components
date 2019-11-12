@@ -3,23 +3,21 @@
 @import "./text-button/text-button.component.scss";
 
 @mixin vertical-button-theme($theme) {
-  @include button-reset();
   @include contained-button-theme($theme);
   @include outlined-button-theme($theme);
   @include text-button-theme($theme);
 }
 
 @mixin button-reset {
-  :host {
-    border: none;
-    cursor: pointer;
-    outline: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-  }
+  border: none;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .vertical-button {
+  @include button-reset();
   border-radius: 2px;
   font-family: Roboto, sans-serif;
   font-size: 0.875rem;
@@ -30,6 +28,11 @@
   padding: 0.375rem 0.5rem;
   position: relative;
   transition: background-color 0.2s cubic-bezier(0.35, 0, 0.25, 1);
+  border: none;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 
   &:disabled {
     cursor: default;
