@@ -34,7 +34,7 @@
     "test": "ng test vertical-components --code-coverage --watch false",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "npm publish dist/vertical-components --access public",
+    "deploy": "ts-node ./scripts/deploy.ts",
     "create-branch": "ts-node ./scripts/create-branch.ts"
   },
   "private": true,

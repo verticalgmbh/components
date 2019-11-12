@@ -94,11 +94,11 @@ async function createBranch() {
     }
 
     // Bump project version
-    await runCmd(`npm version ${newVersion}`, "Bumping project version");
+    await runCmd(`npm --no-git-tag-version version ${newVersion}`, "Bumping project version");
 
     // Bump component library version
     process.chdir('./projects/vertical-components');
-    await runCmd(`npm version ${newVersion}`, "Bumping library version");
+    await runCmd(`npm --no-git-tag-version version ${newVersion}`, "Bumping library version");
 
     // Create new commit
     process.chdir('../..');
