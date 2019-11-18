@@ -3,7 +3,7 @@ import * as chalk from 'chalk';
 // Import child_process to execute bash commands
 import * as child from 'child_process';
 
-export function runCmd(cmd, cmdTitle) {
+export default function runCmd(cmd, cmdTitle) {
   let exitCode: number;
   return new Promise(function (resolve, reject) {
     process.stdout.write(chalk.blue(cmdTitle));

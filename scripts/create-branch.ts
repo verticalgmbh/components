@@ -3,7 +3,7 @@
 // Import 'chalk' for console text formatting
 import * as chalk from 'chalk';
 //Import runCmd function
-import { runCmd } from './script';
+import runCmd from './script';
 // Import 'inquirer' for CLI questions
 import * as inquirer from 'inquirer';
 
