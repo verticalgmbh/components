@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-var runCmd = require('./script-functions').runCmd;
+// Import 'chalk' for console text formatting
+import * as chalk from 'chalk';
+//Import runCmd function
+import { runCmd } from './script';
 
-// Require 'chalk' for console text formatting
-var chalk = require('chalk');
-
-var version = process.env.npm_package_version;
+const version = process.env.npm_package_version;
 
 deployScript();
 
