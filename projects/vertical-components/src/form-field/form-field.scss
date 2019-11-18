@@ -68,13 +68,13 @@
 
     &.error:not(.disabled) {
       .vertical-form-field-input {
-        box-shadow: inset 0 -1px 0 #b00020;
+        box-shadow: inset 0 -2px 0 #b00020;
       }
     }
 
     &.focused {
       .vertical-form-field-input {
-        box-shadow: inset 0 -1px 0 mat-color($primary, 900);
+        box-shadow: inset 0 -2px 0 mat-color($primary, 900);
         caret-color: mat-color($primary, 900);
       }
     }
@@ -98,13 +98,13 @@
 
     &.error:not(.disabled) {
       .vertical-form-field-input {
-        box-shadow: inset 0 0 0 1px #b00020 !important;
+        box-shadow: inset 0 0 0 2px #b00020 !important;
       }
     }
 
     &.focused {
       .vertical-form-field-input {
-        box-shadow: inset 0 0 0 1px mat-color($primary, 900);
+        box-shadow: inset 0 0 0 2px mat-color($primary, 900);
         caret-color: mat-color($primary, 900);
       }
     }
