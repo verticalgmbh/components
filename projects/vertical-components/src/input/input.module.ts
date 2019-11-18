@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { VerticalInput } from './input';
 
 @NgModule({
-  declarations: [],
+  declarations: [VerticalInput],
   imports: [
     CommonModule
   ],
-  exports: []
+  exports: [VerticalInput]
 })
 export class VerticalInputModule { }

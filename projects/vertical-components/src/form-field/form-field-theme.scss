@@ -1,0 +1,37 @@
+@mixin vertical-form-field-theme($theme) {
+  $primary: map-get($theme, primary);
+
+  .vertical-form-field-label {
+    color: rgba(mat-contrast($primary, 50), 0.6);
+  }
+
+  .vertical-form-field-hint {
+    color: rgba(mat-contrast($primary, 50), 0.6);
+  }
+
+  .vertical-form-field-error {
+    color: #b00020;
+  }
+
+  .vertical-form-field-prefix {
+    color: rgba(mat-contrast($primary, 50), 0.54);
+  }
+
+  .vertical-form-field-suffix {
+    color: rgba(mat-contrast($primary, 50), 0.54);
+  }
+
+  @include filled-form-field-theme($theme);
+  @include outlined-form-field-theme($theme);
+}
+
+@mixin filled-form-field-theme($theme) {
+  $primary: map-get($theme, primary);
+
+  .vertical-form-field-input {
+    border-bottom: 1px solid rgba(mat-contrast($primary, 50), 0.6);
+  }
+}
+
+@mixin outlined-form-field-theme($theme) {
+}

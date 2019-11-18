@@ -1,0 +1,188 @@
+@mixin vertical-form-field-theme($theme) {
+  $primary: map-get($theme, primary);
+
+  .vertical-form-field-label {
+    color: rgba(mat-contrast($primary, 50), 0.6);
+
+    .disabled & {
+      color: rgba(mat-contrast($primary, 50), 0.38);
+    }
+
+    &--error {
+      color: #b00020;
+    }
+  }
+
+  .vertical-form-field-hint {
+    color: rgba(mat-contrast($primary, 50), 0.6);
+  }
+
+  .vertical-form-field-error {
+    color: #b00020;
+  }
+
+  .vertical-form-field-input {
+    background-color: mat-contrast($primary, 900);
+  }
+
+  .vertical-form-field-prefix {
+    color: rgba(mat-contrast($primary, 50), 0.54);
+    user-select: none;
+    .disabled & {
+      color: rgba(mat-contrast($primary, 50), 0.38);
+    }
+  }
+
+  .vertical-form-field-suffix {
+    color: rgba(mat-contrast($primary, 50), 0.54);
+    user-select: none;
+    .disabled & {
+      color: rgba(mat-contrast($primary, 50), 0.38);
+    }
+  }
+
+  .vertical-form-field-infix {
+    .disabled & > input::placeholder {
+      color: rgba(mat-contrast($primary, 50), 0.38);
+    }
+  }
+
+  @include filled-form-field-theme($theme);
+  @include outlined-form-field-theme($theme);
+}
+
+@mixin filled-form-field-theme($theme) {
+  $primary: map-get($theme, primary);
+
+  .vertical-form-field-appearance-filled {
+    .vertical-form-field-input {
+      /* Using box-shadow instead of border-bottom to inset the indicator */
+      box-shadow: inset 0 -1px 0 rgba(mat-contrast($primary, 50), 0.6);
+
+      &--error {
+        /* Using !important to override every state, if there is an error*/
+        box-shadow: inset 0 -1px 0 #b00020;
+      }
+    }
+
+    &.focused {
+      .vertical-form-field-input {
+        box-shadow: inset 0 -1px 0 mat-color($primary, 900);
+        caret-color: mat-color($primary, 900);
+      }
+    }
+
+    &.disabled {
+      .vertical-form-field-input {
+        box-shadow: inset 0 -1px 0 rgba(mat-contrast($primary, 50), 0.25);
+      }
+    }
+  }
+}
+
+@mixin outlined-form-field-theme($theme) {
+  $primary: map-get($theme, primary);
+
+  .vertical-form-field-appearance-outlined {
+    .vertical-form-field-input {
+      /* Using box-shadow instead of border-bottom to inset the indicator */
+      box-shadow: inset 0 0 0 1px rgba(mat-contrast($primary, 50), 0.6);
+
+      &--error {
+        /* Using !important to override every state, if there is an error*/
+        box-shadow: inset 0 0 0 1px #b00020 !important;
+      }
+    }
+
+    &.focused {
+      .vertical-form-field-input {
+        box-shadow: inset 0 0 0 1px mat-color($primary, 900);
+        caret-color: mat-color($primary, 900);
+      }
+    }
+  }
+}
+
+.vertical-form-field {
+  display: block;
+  min-width: 20.5rem;
+  width: 100%;
+}
+
+.vertical-form-field-appearance-filled {
+}
+.vertical-form-field-appearance-outlined {
+}
+
+.vertical-form-field-label {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
+  margin-bottom: 0.3125rem;
+  max-width: 95%;
+  overflow: hidden;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.vertical-form-field-input {
+  align-items: baseline;
+  box-sizing: border-box;
+  display: inline-flex;
+  margin-bottom: 0.125rem;
+  padding: 0.625rem 0 0.5rem 0;
+  width: 100%;
+
+  .vertical-form-field-prefix {
+    flex: none;
+    line-height: 1.25rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    margin-left: 0.625rem;
+
+    // .mat-icon {
+    //   height: 1.25rem;
+    //   line-height: 1.25;
+    //   font-size: 0.875rem;
+    //   vertical-align: middle;
+    //   width: 1rem;
+    // }
+  }
+
+  .vertical-form-field-infix {
+    flex: auto;
+    margin: 0 0.625rem;
+  }
+
+  .vertical-form-field-suffix {
+    flex: none;
+    line-height: 1.25rem;
+    font-size: 0.875rem;
+    margin-right: 0.625rem;
+
+    // .mat-icon {
+    //   font-size: 1.25rem;
+    // }
+  }
+}
+
+.vertical-form-field-info {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  line-height: 1rem;
+  margin-left: auto;
+  margin-right: 0.125rem;
+  max-width: 95%;
+  overflow: hidden;
+  text-align: right;
+  user-select: none;
+  white-space: nowrap;
+
+  .vertical-form-field-hint {
+  }
+
+  .vertical-form-field-error {
+  }
+}

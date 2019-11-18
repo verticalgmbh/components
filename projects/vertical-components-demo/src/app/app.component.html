@@ -24,3 +24,21 @@
   <div vertical-tab>Tab2</div>
   <div vertical-tab>Tab3</div>
 </div>
+
+<h1>Form field</h1>
+<vertical-form-field appearance="filled">
+  <vertical-label>Label</vertical-label>
+  <span verticalPrefix>$</span>
+  <input vertical-input disabled placeholder="Input text" />
+  <span verticalSuffix>.00</span>
+  <vertical-hint>Hint</vertical-hint>
+  <vertical-error *ngIf="true">Error</vertical-error>
+</vertical-form-field>
+<vertical-form-field appearance="filled">
+  <vertical-label>Label</vertical-label>
+  <span verticalPrefix>$</span>
+  <input vertical-input placeholder="Input text" />
+  <span verticalSuffix>.00</span>
+  <vertical-hint>Hint</vertical-hint>
+  <vertical-error *ngIf="true">Error</vertical-error>
+</vertical-form-field>
