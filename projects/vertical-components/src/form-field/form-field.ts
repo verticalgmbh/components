@@ -11,10 +11,11 @@ import { VerticalSuffix } from './directives/suffix';
   templateUrl: 'form-field.html',
   styleUrls: ['form-field.scss'],
   host: {
+    '[class.disabled]': 'disabled',
+    '[class.focused]': 'focused',
+    '[class.error]': 'error',
     '[class.vertical-form-field-appearance-filled]': 'appearance == "filled"',
-    '[class.vertical-form-field-appearance-outlined]': 'appearance == "outlined"',
-    '[class.focused]': 'activeElement',
-    '[class.disabled]': 'disabled'
+    '[class.vertical-form-field-appearance-outlined]': 'appearance == "outlined"'
   },
   inputs: ['appearance'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -23,8 +24,9 @@ import { VerticalSuffix } from './directives/suffix';
 export class VerticalFormField implements AfterContentInit, OnDestroy {
 
   private _isAlive = true;
-  activeElement: boolean;
+  focused: boolean;
   disabled: boolean;
+  error: boolean;
 
   @ContentChild(VerticalInput, { static: true }) input: VerticalInput;
   @ContentChildren(VerticalPrefix, { descendants: true }) _prefixChildren: QueryList<VerticalPrefix>;
@@ -33,10 +35,13 @@ export class VerticalFormField implements AfterContentInit, OnDestroy {
 
   ngAfterContentInit(): void {
     this.disabled = this.input.disabled;
+    if (this._errorState() == 'error') {
+      this.error = true;
+    }
 
     this.input.focus.pipe(
       takeWhile(() => this._isAlive),
-      tap(isFocused => this.activeElement = isFocused)
+      tap(isFocused => this.focused = isFocused)
     ).subscribe();
   }
 

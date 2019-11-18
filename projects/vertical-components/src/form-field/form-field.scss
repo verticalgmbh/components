@@ -8,7 +8,7 @@
       color: rgba(mat-contrast($primary, 50), 0.38);
     }
 
-    &--error {
+    .error:not(.disabled) & {
       color: #b00020;
     }
   }
@@ -58,9 +58,16 @@
     .vertical-form-field-input {
       /* Using box-shadow instead of border-bottom to inset the indicator */
       box-shadow: inset 0 -1px 0 rgba(mat-contrast($primary, 50), 0.6);
+    }
 
-      &--error {
-        /* Using !important to override every state, if there is an error*/
+    &.disabled {
+      .vertical-form-field-input {
+        box-shadow: inset 0 -1px 0 rgba(mat-contrast($primary, 50), 0.25);
+      }
+    }
+
+    &.error:not(.disabled) {
+      .vertical-form-field-input {
         box-shadow: inset 0 -1px 0 #b00020;
       }
     }
@@ -69,12 +76,6 @@
       .vertical-form-field-input {
         box-shadow: inset 0 -1px 0 mat-color($primary, 900);
         caret-color: mat-color($primary, 900);
-      }
-    }
-
-    &.disabled {
-      .vertical-form-field-input {
-        box-shadow: inset 0 -1px 0 rgba(mat-contrast($primary, 50), 0.25);
       }
     }
   }
@@ -87,9 +88,16 @@
     .vertical-form-field-input {
       /* Using box-shadow instead of border-bottom to inset the indicator */
       box-shadow: inset 0 0 0 1px rgba(mat-contrast($primary, 50), 0.6);
+    }
 
-      &--error {
-        /* Using !important to override every state, if there is an error*/
+    &.disabled {
+      .vertical-form-field-input {
+        box-shadow: inset 0 0 0 1px rgba(mat-contrast($primary, 50), 0.25);
+      }
+    }
+
+    &.error:not(.disabled) {
+      .vertical-form-field-input {
         box-shadow: inset 0 0 0 1px #b00020 !important;
       }
     }
@@ -131,7 +139,7 @@
   box-sizing: border-box;
   display: inline-flex;
   margin-bottom: 0.125rem;
-  padding: 0.625rem 0 0.5rem 0;
+  padding: 0.5625rem 0;
   width: 100%;
 
   .vertical-form-field-prefix {
@@ -140,14 +148,15 @@
     font-size: 0.875rem;
     white-space: nowrap;
     margin-left: 0.625rem;
+    height: 1.25rem;
 
-    // .mat-icon {
-    //   height: 1.25rem;
-    //   line-height: 1.25;
-    //   font-size: 0.875rem;
-    //   vertical-align: middle;
-    //   width: 1rem;
-    // }
+    .mat-icon {
+      height: 1.25rem;
+      line-height: 1.25;
+      font-size: 0.875rem;
+      vertical-align: middle;
+      width: 0.875rem;
+    }
   }
 
   .vertical-form-field-infix {
@@ -160,16 +169,23 @@
     line-height: 1.25rem;
     font-size: 0.875rem;
     margin-right: 0.625rem;
+    white-space: nowrap;
+    height: 1.25rem;
 
-    // .mat-icon {
-    //   font-size: 1.25rem;
-    // }
+    .mat-icon {
+      height: 1.25rem;
+      line-height: 1.25;
+      font-size: 0.875rem;
+      vertical-align: middle;
+      width: 0.875rem;
+    }
   }
 }
 
 .vertical-form-field-info {
   font-size: 0.75rem;
   font-weight: 400;
+  height: 1rem;
   letter-spacing: 0.4px;
   line-height: 1rem;
   margin-left: auto;

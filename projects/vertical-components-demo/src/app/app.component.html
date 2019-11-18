@@ -25,20 +25,55 @@
   <div vertical-tab>Tab3</div>
 </div>
 
-<h1>Form field</h1>
-<vertical-form-field appearance="filled">
-  <vertical-label>Label</vertical-label>
-  <span verticalPrefix>$</span>
-  <input vertical-input disabled placeholder="Input text" />
-  <span verticalSuffix>.00</span>
-  <vertical-hint>Hint</vertical-hint>
-  <vertical-error *ngIf="true">Error</vertical-error>
-</vertical-form-field>
-<vertical-form-field appearance="filled">
-  <vertical-label>Label</vertical-label>
-  <span verticalPrefix>$</span>
-  <input vertical-input placeholder="Input text" />
-  <span verticalSuffix>.00</span>
-  <vertical-hint>Hint</vertical-hint>
-  <vertical-error *ngIf="true">Error</vertical-error>
-</vertical-form-field>
+<h1>Form fields</h1>
+<section class="form-fields">
+  <h2>Filled form field</h2>
+  <h2>Outlined form field</h2>
+  <vertical-form-field appearance="filled">
+    <vertical-label>Label</vertical-label>
+    <input vertical-input placeholder="Input text" />
+    <mat-icon verticalSuffix>visibility_off</mat-icon>
+    <vertical-hint>Hint</vertical-hint>
+    <vertical-error *ngIf="false">Error</vertical-error>
+  </vertical-form-field>
+  <vertical-form-field appearance="outlined">
+    <vertical-label>Label</vertical-label>
+    <span verticalPrefix>$</span>
+    <input vertical-input placeholder="Input text" />
+    <span verticalSuffix>.00</span>
+    <vertical-hint>Hint</vertical-hint>
+    <vertical-error *ngIf="false">Error</vertical-error>
+  </vertical-form-field>
+  <vertical-form-field appearance="filled">
+    <vertical-label>Label</vertical-label>
+    <span verticalPrefix>$</span>
+    <input vertical-input placeholder="Input text" />
+    <span verticalSuffix>.00</span>
+    <vertical-hint>Hint</vertical-hint>
+    <vertical-error *ngIf="true">Error</vertical-error>
+  </vertical-form-field>
+  <vertical-form-field appearance="outlined">
+    <vertical-label>Label</vertical-label>
+    <span verticalPrefix>$</span>
+    <input vertical-input placeholder="Input text" />
+    <span verticalSuffix>.00</span>
+    <vertical-hint>Hint</vertical-hint>
+    <vertical-error *ngIf="true">Error</vertical-error>
+  </vertical-form-field>
+  <vertical-form-field appearance="filled">
+    <vertical-label>Label</vertical-label>
+    <span verticalPrefix>$</span>
+    <input vertical-input disabled placeholder="Input text" />
+    <span verticalSuffix>.00</span>
+    <vertical-hint>Hint</vertical-hint>
+    <vertical-error *ngIf="true">Error</vertical-error>
+  </vertical-form-field>
+  <vertical-form-field appearance="outlined">
+    <vertical-label>Label</vertical-label>
+    <span verticalPrefix>$</span>
+    <input vertical-input disabled placeholder="Input text" />
+    <span verticalSuffix>.00</span>
+    <vertical-hint>Hint</vertical-hint>
+    <vertical-error *ngIf="true">Error</vertical-error>
+  </vertical-form-field>
+</section>
