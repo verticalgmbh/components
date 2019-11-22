@@ -20,3 +20,5 @@ export * from './input/input';
 export * from './tabs/tabs.module';
 export * from './tabs/tab-group/tab-group.component';
 export * from './tabs/tab/tab.component';
+
+export { VerticalFormFieldControl } from './form-field/form-field-control';

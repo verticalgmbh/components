@@ -29,14 +29,15 @@
 <section class="form-fields">
   <h2>Filled form field</h2>
   <h2>Outlined form field</h2>
-  <vertical-form-field appearance="filled">
+  <vertical-form-field>
     <vertical-label>Label</vertical-label>
-    <input type="file" vertical-input placeholder="Input text" />
+    <!-- <input type="email" vertical-input placeholder="Email" required [formControl]="email"> -->
+    <input type="email" vertical-input value="test" placeholder="Email">
     <mat-icon verticalSuffix>visibility_off</mat-icon>
     <vertical-hint>Hint</vertical-hint>
-    <vertical-error *ngIf="false">Error</vertical-error>
+    <vertical-error *ngIf="true">Error</vertical-error>
   </vertical-form-field>
-  <vertical-form-field appearance="outlined">
+  <!-- <vertical-form-field appearance="outlined">
     <vertical-label>Label</vertical-label>
     <span verticalPrefix>$</span>
     <input vertical-input placeholder="Input text" />
@@ -75,5 +76,5 @@
     <span verticalSuffix>.00</span>
     <vertical-hint>Hint</vertical-hint>
     <vertical-error *ngIf="true">Error</vertical-error>
-  </vertical-form-field>
+  </vertical-form-field> -->
 </section>

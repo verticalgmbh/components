@@ -7,8 +7,6 @@ import { VerticalLabel } from './directives/label';
 import { VerticalPrefix } from './directives/prefix';
 import { VerticalSuffix } from './directives/suffix';
 
-
-
 @NgModule({
   declarations: [VerticalFormField, VerticalError, VerticalHint, VerticalLabel, VerticalPrefix, VerticalSuffix],
   imports: [

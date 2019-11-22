@@ -1,8 +1,10 @@
-<div class="vertical-form-field-label" [class.vertical-form-field-label--error]="_errorState() == 'error'">
-  <ng-content select="vertical-label"></ng-content>
+<div class="vertical-form-field-label">
+  <label [attr.for]="control.id">
+    <ng-content select="vertical-label"></ng-content>
+  </label>
 </div>
 
-<div class="vertical-form-field-input" [class.vertical-form-field-input--error]="_errorState() == 'error'">
+<div class="vertical-form-field-input">
   <div class="vertical-form-field-prefix" *ngIf="_prefixChildren.length">
     <ng-content select="[verticalPrefix]"></ng-content>
   </div>
@@ -14,11 +16,16 @@
   </div>
 </div>
 
-<div class="vertical-form-field-info" [ngSwitch]="_errorState()" *ngIf="!disabled">
-  <ng-container *ngSwitchCase="'error'">
-    <ng-content select="vertical-error"></ng-content>
+<div class="vertical-form-field-info" [ngSwitch]="_getDisplayedInfo()" *ngIf="!disabled">
+  <ng-container *ngIf="_errorChildren.length <= 1">
+    <ng-container *ngSwitchCase="'error'">
+      <ng-content select="vertical-error"></ng-content>
+    </ng-container>
   </ng-container>
-  <ng-container *ngSwitchCase="'hint'">
-    <ng-content select="vertical-hint"></ng-content>
+
+  <ng-container *ngIf="_hintChildren.length <= 1">
+    <ng-container *ngSwitchCase="'hint'">
+      <ng-content select="vertical-hint"></ng-content>
+    </ng-container>
   </ng-container>
 </div>
