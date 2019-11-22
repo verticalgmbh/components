@@ -1,0 +1,5 @@
+@import "./tab/tab.component.scss";
+
+@mixin vertical-tabs-theme($theme) {
+  @include tab-theme($theme);
+}

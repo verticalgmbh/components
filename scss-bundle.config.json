@@ -1,0 +1,10 @@
+{
+  "bundlerOptions": {
+    "entryFile": "./projects/vertical-components/assets/_all-theme.scss",
+    "rootDir": ".",
+    "outFile": "./dist/vertical-components/_theming.scss",
+    "ignoreImports": [
+      "~@angular/.*"
+    ]
+  }
+}

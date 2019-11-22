@@ -1,0 +1,24 @@
+@mixin outlined-button-theme($theme) {
+  $primary: map-get($theme, primary);
+
+  .vertical-outlined-button {
+    background-color: mat-contrast($primary, 900);
+    /* Using 'box-shadow' instead of 'border' to inset the border */
+    box-shadow: inset 0px 0px 0px 1px mat-color($primary, 900);
+    color: mat-color($primary, 900);
+
+    &:disabled {
+      box-shadow: inset 0px 0px 0px 1px rgba(mat-color($primary, 900), 0.2);
+      color: rgba(mat-color($primary, 900), 0.38);
+    }
+
+    &:not([disabled]):hover {
+      background-color: rgba(mat-color($primary, 700), 0.04);
+      box-shadow: inset 0px 0px 0px 1px rgba(mat-color($primary, 900), 0.2);
+    }
+
+    .mat-ripple-element {
+      background-color: rgba(mat-color($primary, 700), 0.12);
+    }
+  }
+}
