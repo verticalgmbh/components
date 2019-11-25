@@ -7,8 +7,9 @@ import { VerticalHint } from './directives/hint';
 import { VerticalPrefix } from './directives/prefix';
 import { VerticalSuffix } from './directives/suffix';
 import { VerticalFormFieldControl } from './form-field-control';
-import { getVerticalFormFieldMissingControlError, getVerticalFormFieldDuplicatedHintError, getVerticalFormFieldDuplicateErrorError } from './form-field-errors';
+import { getVerticalFormFieldMissingControlError, getVerticalFormFieldDuplicateHintError, getVerticalFormFieldDuplicateErrorError, getVerticalFormFieldDuplicateLabelError } from './form-field-errors';
 import { VerticalInput } from '../input/input';
+import { VerticalLabel } from './directives/label';
 
 // Possible appearance styles for the form field
 export type VerticalFormFieldAppearance = 'filled' | 'outlined';
@@ -54,6 +55,7 @@ export class VerticalFormField implements AfterContentInit, OnDestroy {
   @ContentChildren(VerticalSuffix, { descendants: true }) _suffixChildren: QueryList<VerticalSuffix>;
   @ContentChildren(VerticalHint, { descendants: true }) _hintChildren: QueryList<VerticalHint>;
   @ContentChildren(VerticalError, { descendants: true }) _errorChildren: QueryList<VerticalError>;
+  @ContentChildren(VerticalLabel, { descendants: true }) _labelChildren: QueryList<VerticalError>;
 
   constructor(
     private _changeDetectorRef: ChangeDetectorRef,
@@ -65,6 +67,9 @@ export class VerticalFormField implements AfterContentInit, OnDestroy {
 
   ngAfterContentInit() {
     this._validateControl();
+    this._validateLabel();
+    this._validateHints();
+    this._validateErrors();
 
     // Subscribe to changes in the child control state in order to update the form field UI
     this.control.stateChanges.pipe(takeUntil(this._destroyed)).subscribe(() => {
@@ -92,6 +97,12 @@ export class VerticalFormField implements AfterContentInit, OnDestroy {
       this._validateErrors();
       this._changeDetectorRef.markForCheck();
     });
+
+    // Re-validate when the number of labels changes
+    this._labelChildren.changes.pipe(takeUntil(this._destroyed)).subscribe(() => {
+      this._validateLabel();
+      this._changeDetectorRef.markForCheck();
+    });
   }
 
   ngOnDestroy() {
@@ -111,10 +122,17 @@ export class VerticalFormField implements AfterContentInit, OnDestroy {
     }
   }
 
+  // Ensure that there is only one `<vertical-label>` specified
+  private _validateLabel() {
+    if (this._labelChildren && this._labelChildren.length > 1) {
+      throw getVerticalFormFieldDuplicateLabelError();
+    }
+  }
+
   // Ensure that there is only one `<vertical-hint>` specified
   private _validateHints() {
     if (this._hintChildren && this._hintChildren.length > 1) {
-      throw getVerticalFormFieldDuplicatedHintError();
+      throw getVerticalFormFieldDuplicateHintError();
     }
   }
 

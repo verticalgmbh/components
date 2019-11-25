@@ -27,7 +27,6 @@
 
   .vertical-form-field-prefix {
     color: rgba(mat-contrast($primary, 50), 0.54);
-    user-select: none;
     .disabled & {
       color: rgba(mat-contrast($primary, 50), 0.38);
     }
@@ -35,7 +34,6 @@
 
   .vertical-form-field-suffix {
     color: rgba(mat-contrast($primary, 50), 0.54);
-    user-select: none;
     .disabled & {
       color: rgba(mat-contrast($primary, 50), 0.38);
     }
