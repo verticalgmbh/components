@@ -59,18 +59,21 @@ async function createBranch() {
     versionType = answers.versionType;
   });
 
+  // Get new version
   if (branchType === 'release' || branchType === 'hotfix') {
+    let index = currentVersion.indexOf('.');
+    let index2 = currentVersion.indexOf('.', index + 1);
     if (versionType === "major") {
-      const major = currentVersion.substr(0, 1);
-      newVersion = (Number(major) + 1) + currentVersion.substring(1);
+      const major = currentVersion.substr(0, index);
+      newVersion = (Number(major) + 1) + ".0.0";
     }
     else if (versionType === "minor") {
-      const minor = currentVersion.substr(2, 1);
-      newVersion = currentVersion.substring(0, 2) + (Number(minor) + 1) + currentVersion.substring(3);
+      const minor = currentVersion.substr(index + 1, index2 - (index + 1));
+      newVersion = currentVersion.substring(0, index + 1) + (Number(minor) + 1) + ".0";
     }
     else if (versionType === "patch") {
-      const patch = currentVersion.substr(4, 1);
-      newVersion = currentVersion.substring(0, 4) + (Number(patch) + 1);
+      const patch = currentVersion.substr(index2 + 1);
+      newVersion = currentVersion.substring(0, index2 + 1) + (Number(patch) + 1);
     }
 
     // Creating branch
