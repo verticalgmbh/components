@@ -4,16 +4,20 @@ import { Subject } from 'rxjs';
 import { VerticalFormFieldControl } from '../form-field/form-field-control';
 import { getVerticalInputUnsupportedTypeError } from './input-errors';
 
-const VERTICAL_INPUT_INVALID_TYPES = [
-  'button',
-  'checkbox',
-  'file',
-  'hidden',
-  'image',
-  'radio',
-  'range',
-  'reset',
-  'submit'
+const VERTICAL_INPUT_VALID_TYPES = [
+  'color',
+  'date',
+  'datetime-local',
+  'email',
+  'month',
+  'number',
+  'password',
+  'search',
+  'tel',
+  'text',
+  'time',
+  'url',
+  'week'
 ];
 
 let nextUniqueId: number = 0;
@@ -144,7 +148,7 @@ export class VerticalInput implements VerticalFormFieldControl<any>, OnDestroy {
 
   // Ensure that the input has a supported type.
   private _validateType() {
-    if (VERTICAL_INPUT_INVALID_TYPES.indexOf(this._type) > -1) {
+    if (VERTICAL_INPUT_VALID_TYPES.indexOf(this._type) == -1) {
       throw getVerticalInputUnsupportedTypeError(this._type);
     }
   }
