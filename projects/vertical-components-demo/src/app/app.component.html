@@ -29,53 +29,48 @@
 <section class="form-fields">
   <h2>Filled form field</h2>
   <h2>Outlined form field</h2>
+
   <vertical-form-field>
     <vertical-label>Label</vertical-label>
-    <!-- <input type="email" vertical-input placeholder="Email" required [formControl]="email"> -->
-    <input type="email" vertical-input value="56" placeholder="Email">
+    <input vertical-input placeholder="Input">
     <mat-icon verticalSuffix>visibility</mat-icon>
-    <span verticalPrefix>$</span>
     <vertical-hint>Hint</vertical-hint>
-    <vertical-error *ngIf="true">Error</vertical-error>
   </vertical-form-field>
-  <!-- <vertical-form-field appearance="outlined">
-    <vertical-label>Label</vertical-label>
-    <span verticalPrefix>$</span>
-    <input vertical-input placeholder="Input text" />
-    <span verticalSuffix>.00</span>
-    <vertical-hint>Hint</vertical-hint>
-    <vertical-error *ngIf="false">Error</vertical-error>
-  </vertical-form-field>
-  <vertical-form-field appearance="filled">
-    <vertical-label>Label</vertical-label>
-    <span verticalPrefix>$</span>
-    <input vertical-input placeholder="Input text" />
-    <span verticalSuffix>.00</span>
-    <vertical-hint>Hint</vertical-hint>
-    <vertical-error *ngIf="true">Error</vertical-error>
-  </vertical-form-field>
+
   <vertical-form-field appearance="outlined">
     <vertical-label>Label</vertical-label>
-    <span verticalPrefix>$</span>
-    <input vertical-input placeholder="Input text" />
-    <span verticalSuffix>.00</span>
+    <input vertical-input placeholder="Input">
+    <mat-icon verticalSuffix>visibility</mat-icon>
     <vertical-hint>Hint</vertical-hint>
-    <vertical-error *ngIf="true">Error</vertical-error>
   </vertical-form-field>
-  <vertical-form-field appearance="filled">
+
+  <vertical-form-field>
     <vertical-label>Label</vertical-label>
-    <span verticalPrefix>$</span>
-    <input vertical-input disabled placeholder="Input text" />
-    <span verticalSuffix>.00</span>
+    <input type="email" vertical-input placeholder="Email" required [formControl]="emailFormControl">
+    <mat-icon verticalSuffix>visibility</mat-icon>
     <vertical-hint>Hint</vertical-hint>
-    <vertical-error *ngIf="true">Error</vertical-error>
+    <vertical-error *ngIf="emailFormControl.invalid">{{ getErrorMessage() }}</vertical-error>
   </vertical-form-field>
+
   <vertical-form-field appearance="outlined">
     <vertical-label>Label</vertical-label>
-    <span verticalPrefix>$</span>
-    <input vertical-input disabled placeholder="Input text" />
-    <span verticalSuffix>.00</span>
+    <input type="email" vertical-input placeholder="Email" required [formControl]="emailFormControl">
+    <mat-icon verticalSuffix>visibility</mat-icon>
     <vertical-hint>Hint</vertical-hint>
-    <vertical-error *ngIf="true">Error</vertical-error>
-  </vertical-form-field> -->
+    <vertical-error *ngIf="emailFormControl.invalid">{{ getErrorMessage() }}</vertical-error>
+  </vertical-form-field>
+
+  <vertical-form-field>
+    <vertical-label>Label</vertical-label>
+    <input vertical-input placeholder="Input" disabled>
+    <mat-icon verticalSuffix>visibility</mat-icon>
+    <vertical-hint>Hint</vertical-hint>
+  </vertical-form-field>
+
+  <vertical-form-field appearance="outlined">
+    <vertical-label>Label</vertical-label>
+    <input vertical-input placeholder="Input" disabled>
+    <mat-icon verticalSuffix>visibility</mat-icon>
+    <vertical-hint>Hint</vertical-hint>
+  </vertical-form-field>
 </section>

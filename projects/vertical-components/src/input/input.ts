@@ -1,8 +1,7 @@
-
-import { ChangeDetectionStrategy, Component, HostListener, EventEmitter, Input, ElementRef, Optional, Self, OnDestroy } from '@angular/core';
-import { VerticalFormFieldControl } from '../form-field/form-field-control';
+import { ChangeDetectionStrategy, Component, ElementRef, Input, OnDestroy, Optional, Self } from '@angular/core';
+import { FormControl, FormGroupDirective, NgControl, NgForm } from '@angular/forms';
 import { Subject } from 'rxjs';
-import { NgControl, NgForm, FormGroupDirective, FormControl } from '@angular/forms';
+import { VerticalFormFieldControl } from '../form-field/form-field-control';
 import { getVerticalInputUnsupportedTypeError } from './input-errors';
 
 const VERTICAL_INPUT_INVALID_TYPES = [
@@ -37,32 +36,12 @@ let nextUniqueId: number = 0;
 
 export class VerticalInput implements VerticalFormFieldControl<any>, OnDestroy {
 
+  errorState: boolean;
+  focused: boolean = false;
   protected _uid = `vertical-input-${nextUniqueId++}`;
   readonly stateChanges: Subject<void> = new Subject<void>();
-  focused: boolean = false;
-  errorState: boolean;
 
-  @Input()
-  get value(): string { return this._elementRef.nativeElement.value; }
-  set value(value: string) {
-    if (value !== this.value) {
-      this._elementRef.nativeElement.value = value;
-      this.stateChanges.next();
-    }
-  }
-  protected _value: string;
-
-  @Input()
-  get id(): string { return this._id; }
-  set id(value: string) { this._id = value || this._uid }
-  protected _id: string;
-
-  @Input() placeholder: string;
-  @Input()
-  get required(): boolean { return this._required; }
-  set required(value: boolean) { this._required = value; }
-  protected _required = false;
-
+  // Inputs
   @Input()
   get disabled(): boolean {
     if (this.ngControl && this.ngControl.disabled !== null) {
@@ -75,6 +54,8 @@ export class VerticalInput implements VerticalFormFieldControl<any>, OnDestroy {
       this._disabled = true;
     }
 
+    // Browsers may not fire blur event if the input is disabled too quickly.
+    // Reset focused state here to ensure that the element doesn't become stuck.
     if (this.focused) {
       this.focused = false;
       this.stateChanges.next();
@@ -82,11 +63,17 @@ export class VerticalInput implements VerticalFormFieldControl<any>, OnDestroy {
   }
   protected _disabled = false;
 
-  onContainerClick() {
-    if (!this.focused) {
-      this._elementRef.nativeElement.focus();
-    }
-  }
+  @Input()
+  get id(): string { return this._id; }
+  set id(value: string) { this._id = value || this._uid }
+  protected _id: string;
+
+  @Input() placeholder: string;
+
+  @Input()
+  get required(): boolean { return this._required; }
+  set required(value: boolean) { this._required = value; }
+  protected _required = false;
 
   @Input()
   get type(): string { return this._type; }
@@ -97,39 +84,57 @@ export class VerticalInput implements VerticalFormFieldControl<any>, OnDestroy {
   }
   protected _type = 'text';
 
+  @Input()
+  get value(): string { return this._elementRef.nativeElement.value; }
+  set value(value: string) {
+    if (value !== this.value) {
+      this._elementRef.nativeElement.value = value;
+      this.stateChanges.next();
+    }
+  }
+  protected _value: string;
+
   constructor(
     private _elementRef: ElementRef,
     @Optional() @Self() public ngControl: NgControl,
     @Optional() public _parentForm: NgForm,
     @Optional() public _parentFormGroup: FormGroupDirective) {
 
+    // Force setter to be called in case id was not specified.
     this.id = this.id;
   }
 
-  protected _validateType() {
-    if (VERTICAL_INPUT_INVALID_TYPES.indexOf(this._type) > -1) {
-      throw getVerticalInputUnsupportedTypeError(this._type);
+  ngDoCheck() {
+    if (this.ngControl) {
+
+      // The error state needs to be checked on every change detection cycle, because there are some error triggers that can't be subscribed to (e.g. parent form submissions).
+      this._updateErrorState();
     }
   }
 
-  _focusChanged(isFocused: boolean) {
+  ngOnDestroy() {
+    this.stateChanges.complete();
+  }
+
+  // Update focus state of the input.
+  private _focusChanged(isFocused: boolean) {
     if (isFocused !== this.focused) {
       this.focused = isFocused;
     }
     this.stateChanges.next();
   }
 
-  ngDoCheck() {
-    if (this.ngControl) {
-      this.updateErrorState();
-    }
+  // Defines how form controls behave with regards to displaying error messages
+  private _isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    return !!(control && control.invalid && (control.touched || (form && form.submitted)));
   }
 
-  updateErrorState() {
+  // Updates error state.
+  private _updateErrorState() {
     const oldState = this.errorState;
     const parent = this._parentFormGroup || this._parentForm;
     const control = this.ngControl ? this.ngControl.control as FormControl : null;
-    const newState = this.isErrorState(control, parent);
+    const newState = this._isErrorState(control, parent);
 
     if (newState !== oldState) {
       this.errorState = newState;
@@ -137,11 +142,10 @@ export class VerticalInput implements VerticalFormFieldControl<any>, OnDestroy {
     }
   }
 
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    return !!(control && control.invalid && (control.touched || (form && form.submitted)));
-  }
-
-  ngOnDestroy() {
-    this.stateChanges.complete();
+  // Ensure that the input has a supported type.
+  private _validateType() {
+    if (VERTICAL_INPUT_INVALID_TYPES.indexOf(this._type) > -1) {
+      throw getVerticalInputUnsupportedTypeError(this._type);
+    }
   }
 }

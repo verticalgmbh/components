@@ -13,14 +13,6 @@
     }
   }
 
-  .vertical-form-field-hint {
-    color: rgba(mat-contrast($primary, 50), 0.6);
-  }
-
-  .vertical-form-field-error {
-    color: #b00020;
-  }
-
   .vertical-form-field-input {
     background-color: mat-contrast($primary, 900);
   }
@@ -32,6 +24,15 @@
     }
   }
 
+  .vertical-form-field-infix {
+    .disabled & > input {
+      color: rgba(mat-contrast($primary, 50), 0.38);
+    }
+    .disabled & > input::placeholder {
+      color: rgba(mat-contrast($primary, 50), 0.38);
+    }
+  }
+
   .vertical-form-field-suffix {
     color: rgba(mat-contrast($primary, 50), 0.54);
     .disabled & {
@@ -39,10 +40,12 @@
     }
   }
 
-  .vertical-form-field-infix {
-    .disabled & > input::placeholder {
-      color: rgba(mat-contrast($primary, 50), 0.38);
-    }
+  .vertical-form-field-hint {
+    color: rgba(mat-contrast($primary, 50), 0.6);
+  }
+
+  .vertical-form-field-error {
+    color: #b00020;
   }
 
   @include filled-form-field-theme($theme);
@@ -54,7 +57,7 @@
 
   .vertical-form-field-appearance-filled {
     .vertical-form-field-input {
-      /* Using box-shadow instead of border-bottom to inset the indicator */
+      // Using box-shadow instead of border-bottom to inset the indicator.
       box-shadow: inset 0 -1px 0 rgba(mat-contrast($primary, 50), 0.6);
     }
 
@@ -84,7 +87,7 @@
 
   .vertical-form-field-appearance-outlined {
     .vertical-form-field-input {
-      /* Using box-shadow instead of border-bottom to inset the indicator */
+      // Using box-shadow instead of border-bottom to inset the indicator.
       box-shadow: inset 0 0 0 1px rgba(mat-contrast($primary, 50), 0.6);
     }
 

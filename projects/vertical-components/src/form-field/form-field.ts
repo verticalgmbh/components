@@ -1,15 +1,14 @@
-
-import { AfterContentInit, ChangeDetectorRef, ChangeDetectionStrategy, Component, ContentChild, ContentChildren, Inject, Input, OnDestroy, Optional, QueryList, InjectionToken } from '@angular/core';
-import { Subject, merge } from 'rxjs';
+import { AfterContentInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChild, ContentChildren, Inject, InjectionToken, Input, OnDestroy, Optional, QueryList } from '@angular/core';
+import { merge, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { VerticalInput } from '../input/input';
 import { VerticalError } from './directives/error';
 import { VerticalHint } from './directives/hint';
+import { VerticalLabel } from './directives/label';
 import { VerticalPrefix } from './directives/prefix';
 import { VerticalSuffix } from './directives/suffix';
 import { VerticalFormFieldControl } from './form-field-control';
-import { getVerticalFormFieldMissingControlError, getVerticalFormFieldDuplicateHintError, getVerticalFormFieldDuplicateErrorError, getVerticalFormFieldDuplicateLabelError } from './form-field-errors';
-import { VerticalInput } from '../input/input';
-import { VerticalLabel } from './directives/label';
+import { getVerticalFormFieldDuplicateErrorError, getVerticalFormFieldDuplicateHintError, getVerticalFormFieldDuplicateLabelError, getVerticalFormFieldMissingControlError } from './form-field-errors';
 
 // Possible appearance styles for the form field
 export type VerticalFormFieldAppearance = 'filled' | 'outlined';
@@ -32,8 +31,7 @@ export const VERTICAL_FORM_FIELD_DEFAULT_OPTIONS = new InjectionToken<VerticalFo
     '[class.error]': 'control.errorState',
     '[class.focused]': 'control.focused',
     '[class.vertical-form-field-appearance-filled]': '_appearance == "filled"',
-    '[class.vertical-form-field-appearance-outlined]': '_appearance == "outlined"',
-    '(click)': 'control.onContainerClick()'
+    '[class.vertical-form-field-appearance-outlined]': '_appearance == "outlined"'
   },
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -122,10 +120,10 @@ export class VerticalFormField implements AfterContentInit, OnDestroy {
     }
   }
 
-  // Ensure that there is only one `<vertical-label>` specified
-  private _validateLabel() {
-    if (this._labelChildren && this._labelChildren.length > 1) {
-      throw getVerticalFormFieldDuplicateLabelError();
+  // Ensure that there is only one `<vertical-error>` specified
+  private _validateErrors() {
+    if (this._errorChildren && this._errorChildren.length > 1) {
+      throw getVerticalFormFieldDuplicateErrorError();
     }
   }
 
@@ -136,10 +134,10 @@ export class VerticalFormField implements AfterContentInit, OnDestroy {
     }
   }
 
-  // Ensure that there is only one `<vertical-error>` specified
-  private _validateErrors() {
-    if (this._errorChildren && this._errorChildren.length > 1) {
-      throw getVerticalFormFieldDuplicateErrorError();
+  // Ensure that there is only one `<vertical-label>` specified
+  private _validateLabel() {
+    if (this._labelChildren && this._labelChildren.length > 1) {
+      throw getVerticalFormFieldDuplicateLabelError();
     }
   }
 }

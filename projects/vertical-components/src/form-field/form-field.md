@@ -15,7 +15,7 @@ The `vertical-form-field` has two different appearance variants which can be set
 
 Hints are additional descriptive text that appear below the form field's underline. A `<vertical-form-field>` can only have one `<vertical-hint>` element. 
 
-Please note that per design a hint only takes up 80% of the available width, which can lead to a hint being cut off. Therefore try to keep your hints as short and clear as possible.
+Please note that per design a hint only takes up 95% of the available width, which can lead to a hint being cut off. Therefore try to keep your hints as short and clear as possible.
 
 ## Errors
 
@@ -23,7 +23,7 @@ Errors can be shown below the form field underline by adding a `<vertical-error>
 
 Errors will be hidden initially and will be displayed on invalid form fields after the user has interacted with the element or the parent form has been submitted. Since errors occupy the same space as hints, hints are hidden when errors are shown. A `<vertical-form-field>` can only have one `<vertical-error>` element. If a form field can have more than one error state it is up to your app to toggle which message should be displayed. 
 
-Please note that per design an error only takes up 80% of the available width, which can lead to an error being cut off. Therefore try to keep your errors as short and clear as possible.
+Please note that per design an error only takes up 95% of the available width, which can lead to an error being cut off. Therefore try to keep your errors as short and clear as possible.
 
 ## Label
 
@@ -31,7 +31,7 @@ A label is a text that is displayed above the form field by adding a `<vertical-
 
 A `vertical-label` will insert a native html `<label>` element with the `for` attribute set to the unique id of the form field control (e.g. input).
 
-Please note that per design a label only takes up 80% of the available width, which can lead to a label being cut off. Therefore try to keep your labels as short and clear as possible.
+Please note that per design a label only takes up 95% of the available width, which can lead to a label being cut off. Therefore try to keep your labels as short and clear as possible.
 
 ## Prefix & Suffix
 

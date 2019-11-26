@@ -7,11 +7,11 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  // email = new FormControl({ value: '', disabled: true }, [Validators.required, Validators.email]);
+  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
 
-  // getErrorMessage() {
-  //   return this.email.hasError('required') ? 'You must enter a value' :
-  //     this.email.hasError('email') ? 'Not a valid email' :
-  //       '';
-  // }
+  getErrorMessage() {
+    return this.emailFormControl.hasError('required') ? 'You must enter a value' :
+      this.emailFormControl.hasError('email') ? 'Not a valid email' :
+        '';
+  }
 }

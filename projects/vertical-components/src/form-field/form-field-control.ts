@@ -1,29 +1,18 @@
 import { Directive } from "@angular/core";
-import { Observable } from 'rxjs';
 import { NgControl } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Directive({
   selector: 'vertical-form-field-control'
 })
 export abstract class VerticalFormFieldControl<T> {
-
-  value: T | null;
-
-  readonly stateChanges: Observable<void>;
-
-  readonly id: string;
-
-  readonly placeholder: string;
-
-  readonly ngControl: NgControl | null;
-
-  readonly focused: boolean;
-
-  readonly required: boolean;
-
   readonly disabled: boolean;
-
   readonly errorState: boolean;
-
-  abstract onContainerClick(): void;
+  readonly focused: boolean;
+  readonly id: string;
+  readonly ngControl: NgControl | null;
+  readonly placeholder: string;
+  readonly required: boolean;
+  readonly stateChanges: Observable<void>;
+  value: T | null;
 }
