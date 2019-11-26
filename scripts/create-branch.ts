@@ -1,23 +1,19 @@
 #!/usr/bin/env node
 
-var runCmd = require('./script-functions').runCmd;
+// Import 'chalk' for console text formatting
+import * as chalk from 'chalk';
+//Import runCmd function
+import runCmd from './script';
+// Import 'inquirer' for CLI questions
+import * as inquirer from 'inquirer';
 
-// Require 'chalk' for console text formatting
-var chalk = require('chalk');
+let branchType = "";
+let currentVersion = process.env.npm_package_version;
+let featureName = "";
+let newVersion = "";
+let versionType = "";
 
-// Require child_process.exec to execute bash commands
-var exec = require('child_process').exec;
-
-// Require 'inquirer' for CLI
-var inquirer = require('inquirer');
-
-var branchType = "";
-var currentVersion = process.env.npm_package_version;
-var featureName = "";
-var newVersion = "";
-var versionType = "";
-
-var questions = [
+const questions = [
   {
     type: 'list',
     name: 'branchType',
@@ -63,18 +59,21 @@ async function createBranch() {
     versionType = answers.versionType;
   });
 
+  // Get new version
   if (branchType === 'release' || branchType === 'hotfix') {
+    let index = currentVersion.indexOf('.');
+    let index2 = currentVersion.indexOf('.', index + 1);
     if (versionType === "major") {
-      var major = currentVersion.substr(0, 1);
-      newVersion = (Number(major) + 1) + currentVersion.substring(1);
+      const major = currentVersion.substr(0, index);
+      newVersion = (Number(major) + 1) + ".0.0";
     }
     else if (versionType === "minor") {
-      var minor = currentVersion.substr(2, 1);
-      newVersion = currentVersion.substring(0, 2) + (Number(minor) + 1) + currentVersion.substring(3);
+      const minor = currentVersion.substr(index + 1, index2 - (index + 1));
+      newVersion = currentVersion.substring(0, index + 1) + (Number(minor) + 1) + ".0";
     }
     else if (versionType === "patch") {
-      var patch = currentVersion.substr(4, 1);
-      newVersion = currentVersion.substring(0, 4) + (Number(patch) + 1);
+      const patch = currentVersion.substr(index2 + 1);
+      newVersion = currentVersion.substring(0, index2 + 1) + (Number(patch) + 1);
     }
 
     // Creating branch

@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-var runCmd = require('./script-functions').runCmd;
-
-// Require 'chalk' for console text formatting
-var chalk = require('chalk');
+// Import 'chalk' for console text formatting
+import * as chalk from 'chalk';
+//Import runCmd function
+import runCmd from './script';
 
 buildScript();
 
@@ -20,9 +20,9 @@ async function buildScript() {
   await runCmd(`scss-bundle`, "Bundling scss files");
 
   // Prebuild theme files
-  var src = "./projects/vertical-components/assets/themes/";
-  var dest = "./dist/vertical-components/prebuilt-themes/";
-  var imp = "--importer=node_modules/node-sass-tilde-importer";
+  let src = "./projects/vertical-components/assets/themes/";
+  let dest = "./dist/vertical-components/prebuilt-themes/";
+  let imp = "--importer=node_modules/node-sass-tilde-importer";
   await runCmd(`node-sass ${src} ${imp} -o ${dest}`, "Prebuilding theme files");
 
   // Copy Readme from project directory to dist folder
