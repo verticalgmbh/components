@@ -8,17 +8,6 @@ This is the library of the vertical team's UI components.
 npm install @verticalgmbh/components
 ```
 
-## Usage
-
-Vertical components can be used as attributes on normal html elements.
-
-### Example
-
-```html
-<button vertical-contained-button>Button</button>
-<button vertical-contained-button disabled>Button</button>
-```
-
 ## Getting started
 
 ### 1. Install component library
@@ -39,9 +28,11 @@ npm install @angular/cdk @angular/material
 Import the theme file by including the followng line in your `styles.scss`:
 
 ```css
-@import '~@verticalgmbh/components/assets/themes/vertical-light-theme.scss';
+@import '@verticalgmbh/components/prebuilt-themes/vertical-light-theme.css';
 ```
 If you want to use a custom theme, please follow the [theming guide](https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/assets/theming.md).
+
+Make sure that you have installed [material icons](https://google.github.io/material-design-icons/) and the [roboto font](https://fonts.google.com/specimen/Roboto).
 
 ### 3. Import modules
 

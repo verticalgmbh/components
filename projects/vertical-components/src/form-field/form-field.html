@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<div class="vertical-form-field-info" [ngSwitch]="_getDisplayedInfo()" *ngIf="!disabled">
+<div class="vertical-form-field-info" [ngSwitch]="_getDisplayedInfo()" *ngIf="!control.disabled">
   <ng-container *ngIf="_errorChildren.length <= 1">
     <ng-container *ngSwitchCase="'error'">
       <ng-content select="vertical-error"></ng-content>

@@ -117,7 +117,7 @@ export class VerticalInput implements VerticalFormFieldControl<any>, OnDestroy {
   }
 
   // Update focus state of the input.
-  private _focusChanged(isFocused: boolean) {
+  _focusChanged(isFocused: boolean) {
     if (isFocused !== this.focused) {
       this.focused = isFocused;
     }

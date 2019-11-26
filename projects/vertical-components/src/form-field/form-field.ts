@@ -30,8 +30,8 @@ export const VERTICAL_FORM_FIELD_DEFAULT_OPTIONS = new InjectionToken<VerticalFo
     '[class.disabled]': 'control.disabled',
     '[class.error]': 'control.errorState',
     '[class.focused]': 'control.focused',
-    '[class.vertical-form-field-appearance-filled]': '_appearance == "filled"',
-    '[class.vertical-form-field-appearance-outlined]': '_appearance == "outlined"'
+    '[class.vertical-form-field-appearance-filled]': 'appearance == "filled"',
+    '[class.vertical-form-field-appearance-outlined]': 'appearance == "outlined"'
   },
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -109,7 +109,7 @@ export class VerticalFormField implements AfterContentInit, OnDestroy {
   }
 
   // Determines whether to display hints or errors
-  private _getDisplayedInfo(): 'error' | 'hint' {
+  _getDisplayedInfo(): 'error' | 'hint' {
     return (this._errorChildren && this._errorChildren.length > 0 && this.control.errorState) ? 'error' : 'hint'
   }
 
