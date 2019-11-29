@@ -9,7 +9,7 @@ Available pre-built themes:
 If you're using Agular CLI, just include one line in your `styles.css` file:
 
 ```css
-@import '@verticalgmbh/components/assets/themes/vertical-light-theme.scss';
+@import '@verticalgmbh/components/prebuilt-themes/vertical-light-theme.css';
 ```
 
 ## Defining a custom theme
@@ -25,7 +25,7 @@ A custom theme file needs to do the following things:
 ### Example
 
 ```css
-@import "~@verticalgmbh/components/assets/all-theme";
+@import "~@verticalgmbh/components/_theming.scss";
 @import "./custom-palette";
 
 /* Include common styles */

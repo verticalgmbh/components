@@ -1,0 +1,12 @@
+@mixin vertical-input-theme($theme) {
+  $primary: map-get($theme, primary);
+
+  .vertical-input {
+    background-color: transparent;
+    color: rgba(mat-contrast($primary, 50), 0.87);
+
+    &::placeholder {
+      color: rgba(mat-contrast($primary, 50), 0.54);
+    }
+  }
+}
