@@ -1,11 +1,15 @@
 #!/usr/bin/env node
 
-// Import 'chalk' for console text formatting
-import * as chalk from 'chalk';
-//Import runCmd function
-import runCmd from './script';
-// Import 'inquirer' for CLI questions
-import * as inquirer from 'inquirer';
+// TODO: Change require statements to imports. Note thattttt this causes an error with default exports.
+
+// Require 'chalk' for console text formatting
+var chalk = require('chalk');
+
+// Require 'inquirer' for CLI questions
+var inquirer = require('inquirer');
+
+// Require runCmd function
+var runCmd = require('./script').runCmd;
 
 let branchType = "";
 let currentVersion = process.env.npm_package_version;
