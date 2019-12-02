@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ContentChildren, OnDestroy, Input, AfterContentInit, ChangeDetectionStrategy, QueryList } from '@angular/core';
 import { takeWhile, tap } from 'rxjs/operators';
 
-import { TabComponent } from '../tab/tab.component';
+import { VerticalTab } from '../tab/tab.component';
 
 @Component({
   selector: '[vertical-tab-group]',
@@ -9,11 +9,11 @@ import { TabComponent } from '../tab/tab.component';
   styleUrls: ['./tab-group.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TabGroupComponent implements AfterViewInit, OnDestroy, AfterContentInit {
+export class VerticalTabGroup implements AfterViewInit, OnDestroy, AfterContentInit {
   private _isAlive = true;
-  @Input() activeTab: TabComponent;
+  @Input() activeTab: VerticalTab;
 
-  @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
+  @ContentChildren(VerticalTab) tabs: QueryList<VerticalTab>;
 
   constructor() { }
 
@@ -38,8 +38,8 @@ export class TabGroupComponent implements AfterViewInit, OnDestroy, AfterContent
       tab.click
         .pipe(
           takeWhile(() => this._isAlive),
-          tap((active: TabComponent) => (this.activeTab = active)),
-          tap((active: TabComponent) => this.tabs.forEach(t => (t.isActive = t === active)))
+          tap((active: VerticalTab) => (this.activeTab = active)),
+          tap((active: VerticalTab) => this.tabs.forEach(t => (t.isActive = t === active)))
         )
         .subscribe();
     }

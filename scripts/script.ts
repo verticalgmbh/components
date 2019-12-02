@@ -1,9 +1,12 @@
-// Import 'chalk' for console text formatting
-import * as chalk from 'chalk';
-// Import child_process to execute bash commands
-import * as child from 'child_process';
+// TODO: Change require statements to imports. Note that this causes an error with default exports.
 
-export default function runCmd(cmd, cmdTitle) {
+// Require 'chalk' for console text formatting
+var chalk = require('chalk');
+
+// Require child_process.exec to execute bash commands
+var child = require('child_process');
+
+exports.runCmd = function (cmd, cmdTitle) {
   let exitCode: number;
   return new Promise(function (resolve, reject) {
     process.stdout.write(chalk.blue(cmdTitle));

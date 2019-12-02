@@ -9,8 +9,9 @@ import { Component, EventEmitter, HostBinding, HostListener, ChangeDetectionStra
     class: 'vertical-tab'
   }
 })
-export class TabComponent {
-  click = new EventEmitter<TabComponent>();
+
+export class VerticalTab {
+  click = new EventEmitter<VerticalTab>();
   @HostBinding('class.vertical-tab-active')
   isActive = false;
 
