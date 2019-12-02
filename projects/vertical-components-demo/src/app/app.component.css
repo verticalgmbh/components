@@ -21,3 +21,10 @@ h2 {
 .buttons button {
   margin-right: 32px;
 }
+
+.form-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 32px;
+  width: 50%;
+}

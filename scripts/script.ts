@@ -1,14 +1,16 @@
+// TODO: Change require statements to imports. Note that this causes an error with default exports.
+
 // Require 'chalk' for console text formatting
 var chalk = require('chalk');
 
 // Require child_process.exec to execute bash commands
-var exec = require('child_process').exec;
+var child = require('child_process');
 
 exports.runCmd = function (cmd, cmdTitle) {
-  var exitCode: number = 0;
+  let exitCode: number;
   return new Promise(function (resolve, reject) {
     process.stdout.write(chalk.blue(cmdTitle));
-    exec(cmd, (err, stdout, stderr) => {
+    child.exec(cmd, (err, stdout, stderr) => {
       if (exitCode === 0) {
         if (stderr === "") {
           console.log(chalk.green(" ".repeat(70 - cmdTitle.length) + "[ PASSED ]"));

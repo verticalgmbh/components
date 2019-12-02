@@ -1,0 +1,31 @@
+<div class="vertical-form-field-label">
+  <label [attr.for]="control.id">
+    <ng-content select="vertical-label"></ng-content>
+  </label>
+</div>
+
+<div class="vertical-form-field-input">
+  <div class="vertical-form-field-prefix" *ngIf="prefixChildren.length">
+    <ng-content select="[verticalPrefix]"></ng-content>
+  </div>
+  <div class="vertical-form-field-infix">
+    <ng-content></ng-content>
+  </div>
+  <div class="vertical-form-field-suffix" *ngIf="suffixChildren.length">
+    <ng-content select="[verticalSuffix]"></ng-content>
+  </div>
+</div>
+
+<div class="vertical-form-field-info" [ngSwitch]="getDisplayedInfo()" *ngIf="!control.disabled">
+  <ng-container *ngIf="errorChildren.length <= 1">
+    <ng-container *ngSwitchCase="'error'">
+      <ng-content select="vertical-error"></ng-content>
+    </ng-container>
+  </ng-container>
+
+  <ng-container *ngIf="hintChildren.length <= 1">
+    <ng-container *ngSwitchCase="'hint'">
+      <ng-content select="vertical-hint"></ng-content>
+    </ng-container>
+  </ng-container>
+</div>

@@ -8,17 +8,6 @@ This is the library of the vertical team's UI components.
 npm install @verticalgmbh/components
 ```
 
-## Usage
-
-Vertical components can be used as attributes on normal html elements.
-
-### Example
-
-```html
-<button vertical-contained-button>Button</button>
-<button vertical-contained-button disabled>Button</button>
-```
-
 ## Getting started
 
 ### 1. Install component library
@@ -39,9 +28,11 @@ npm install @angular/cdk @angular/material
 Import the theme file by including the followng line in your `styles.scss`:
 
 ```css
-@import '~@verticalgmbh/components/assets/themes/vertical-light-theme.scss';
+@import '@verticalgmbh/components/prebuilt-themes/vertical-light-theme.css';
 ```
 If you want to use a custom theme, please follow the [theming guide](https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/assets/theming.md).
+
+Make sure that you have installed [material icons](https://google.github.io/material-design-icons/) and the [roboto font](https://fonts.google.com/specimen/Roboto).
 
 ### 3. Import modules
 
@@ -71,13 +62,17 @@ You can find a demo of all components [here](https://components.vertical.de).
 
 ## Features
 
-| Feature   | Documentation   |
-|-----------|-----------------|
-| button    | [Docs][1]       |
-| tabs      | [Docs][2]       |
-| --------- | --------------- |
-| theming   | [Guide][3]      |
+| Feature    | Documentation   |
+|------------|-----------------|
+| button     | [Docs][1]       |
+| form-field | [Docs][2]       |
+| input      | [Docs][3]       |
+| tabs       | [Docs][4]       |
+| ---------  | --------------- |
+| theming    | [Guide][5]      |
 
-[1]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/src/lib/button/button.md
-[2]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/src/lib/tabs/tabs.md
-[3]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/assets/theming.md
+[1]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/src/button/button.md
+[2]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/src/form-field/form-field.md
+[3]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/src/input/input.md
+[4]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/src/tabs/tabs.md
+[5]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/assets/theming.md

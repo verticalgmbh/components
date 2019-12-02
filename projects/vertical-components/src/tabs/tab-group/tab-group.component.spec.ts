@@ -1,22 +1,22 @@
 import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
-import { TabComponent } from '../tab/tab.component';
+import { VerticalTab } from '../tab/tab.component';
 
-import { TabGroupComponent } from './tab-group.component';
+import { VerticalTabGroup } from './tab-group.component';
 
-describe('TabGroupComponent', () => {
-  let component: TabGroupComponent;
-  let fixture: ComponentFixture<TabGroupComponent>;
-  let tabs = [new TabComponent()];
+describe('VerticalTabGroup', () => {
+  let component: VerticalTabGroup;
+  let fixture: ComponentFixture<VerticalTabGroup>;
+  let tabs = [new VerticalTab()];
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [TabGroupComponent]
+      declarations: [VerticalTabGroup]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TabGroupComponent);
+    fixture = TestBed.createComponent(VerticalTabGroup);
     component = fixture.componentInstance;
     (component.tabs as any) = {
       toArray() {

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TabComponent } from './tab.component';
+import { VerticalTab } from './tab.component';
 
-describe('TabComponent', () => {
-  let component: TabComponent;
-  let fixture: ComponentFixture<TabComponent>;
+describe('VerticalTab', () => {
+  let component: VerticalTab;
+  let fixture: ComponentFixture<VerticalTab>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [TabComponent]
+      declarations: [VerticalTab]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TabComponent);
+    fixture = TestBed.createComponent(VerticalTab);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
