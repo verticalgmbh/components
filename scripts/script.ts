@@ -1,4 +1,4 @@
-// TODO: Change require statements to imports. Note thattttt this causes an error with default exports.
+// TODO: Change require statements to imports. Note that this causes an error with default exports.
 
 // Require 'chalk' for console text formatting
 var chalk = require('chalk');
