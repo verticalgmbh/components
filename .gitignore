@@ -40,7 +40,7 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
-verticalgmbh-components-*.tgz
+verticalgmbh-components-.*.tgz
 
 # System Files
 .DS_Store
