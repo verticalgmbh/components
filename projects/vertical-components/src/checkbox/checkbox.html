@@ -1,0 +1,17 @@
+<label [attr.for]="id" class="vertical-checkbox__container">
+  <input class="vertical-checkbox__input"
+         type="checkbox"
+         [attr.name]="name"
+         [attr.value]="value"
+         [checked]="checked"
+         [disabled]="disabled"
+         [id]="id"
+         [required]="required"
+         (click)="onInputClick($event)" />
+
+  <mat-icon class="vertical-checkbox__icon">{{ checkboxIcon }}</mat-icon>
+
+  <span class="vertical-checkbox__label">
+    <ng-content></ng-content>
+  </span>
+</label>
