@@ -16,6 +16,10 @@ export * from './form-field/form-field';
 export * from './input/input.module';
 export * from './input/input';
 
+// Table
+export * from './table/table.module';
+export * from './table/table';
+
 // Tabs
 export * from './tabs/tabs.module';
 export * from './tabs/tab-group/tab-group.component';

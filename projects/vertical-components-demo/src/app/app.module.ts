@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
-import { VerticalButtonModule, VerticalTabsModule, VerticalFormFieldModule, VerticalInputModule } from 'projects/vertical-components/src/public-api';
+import { VerticalButtonModule, VerticalTabsModule, VerticalFormFieldModule, VerticalInputModule, VerticalTableModule } from 'projects/vertical-components/src/public-api';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, ReactiveFormsModule, VerticalButtonModule, VerticalTabsModule, VerticalFormFieldModule, VerticalInputModule, MatIconModule],
+  imports: [BrowserModule, ReactiveFormsModule, VerticalButtonModule, VerticalTabsModule, VerticalFormFieldModule, VerticalInputModule, MatIconModule, VerticalTableModule],
   providers: [],
   bootstrap: [AppComponent]
 })

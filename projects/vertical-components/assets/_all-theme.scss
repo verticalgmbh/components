@@ -3,6 +3,7 @@
 @import "../src/button/button.scss";
 @import "../src/form-field/form-field-theme.scss";
 @import "../src/input/input-theme.scss";
+@import "../src/table/table-theme.scss";
 @import "../src/tabs/tabs.scss";
 
 // Create a theme
@@ -11,5 +12,6 @@
   @include vertical-button-theme($theme);
   @include vertical-form-field-theme($theme);
   @include vertical-input-theme($theme);
+  @include vertical-table-theme($theme);
   @include vertical-tabs-theme($theme);
 }

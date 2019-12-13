@@ -1,0 +1,3 @@
+@mixin vertical-table-theme($theme) {
+  $primary: map-get($theme, primary);
+}
