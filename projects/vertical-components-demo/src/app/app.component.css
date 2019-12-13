@@ -30,5 +30,6 @@ h2 {
 }
 
 .checkbox {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
