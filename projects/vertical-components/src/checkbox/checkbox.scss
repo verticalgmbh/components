@@ -1,0 +1,41 @@
+:host.vertical-checkbox {
+  cursor: pointer;
+  display: inline;
+  font-family: Roboto, sans-serif;
+  user-select: none;
+
+  &.disabled {
+    cursor: default;
+  }
+}
+
+.vertical-checkbox__container {
+  cursor: inherit;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.vertical-checkbox__input {
+  display: none;
+}
+
+.vertical-checkbox__icon {
+  order: 0;
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+.vertical-checkbox__label {
+  line-height: 1.5rem;
+}
+
+:host.vertical-checkbox__label--before {
+  .vertical-checkbox__label {
+    order: 0;
+  }
+  .vertical-checkbox__icon {
+    order: 1;
+    margin-left: 0.5rem;
+    margin-right: 0;
+  }
+}

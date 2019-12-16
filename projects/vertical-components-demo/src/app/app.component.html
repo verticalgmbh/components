@@ -74,3 +74,17 @@
     <vertical-hint>Hint</vertical-hint>
   </vertical-form-field>
 </section>
+
+<h1>Checkbox</h1>
+<section class="checkbox">
+  <h2>labelPosition = "after"</h2>
+  <h2>labelPosition = "before"</h2>
+  <vertical-checkbox>Label</vertical-checkbox>
+  <vertical-checkbox [labelPosition]="'before'">Label</vertical-checkbox>
+  <vertical-checkbox [checked]="true">Checked</vertical-checkbox>
+  <vertical-checkbox [checked]="true" [labelPosition]="'before'">Checked</vertical-checkbox>
+  <vertical-checkbox [indeterminate]="true">Indeterminate</vertical-checkbox>
+  <vertical-checkbox [indeterminate]="true" [labelPosition]="'before'">Indeterinate</vertical-checkbox>
+  <vertical-checkbox [disabled]="true">Disabled</vertical-checkbox>
+  <vertical-checkbox [disabled]="true" [labelPosition]="'before'">Disabled</vertical-checkbox>
+</section>
