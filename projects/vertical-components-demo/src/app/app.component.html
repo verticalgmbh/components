@@ -88,3 +88,36 @@
   <vertical-checkbox [disabled]="true">Disabled</vertical-checkbox>
   <vertical-checkbox [disabled]="true" [labelPosition]="'before'">Disabled</vertical-checkbox>
 </section>
+
+<h1>Sidenav</h1>
+<section>
+  <nav vertical-sidenav>
+    <vertical-sidenav-group title="Component Library">
+      <vertical-sidenav-item title="Getting Started">
+        <vertical-sidenav-item title="Installation">
+          <vertical-sidenav-item title="Install Library" [count]=1></vertical-sidenav-item>
+          <vertical-sidenav-item title="Install Dependencies" [count]=4></vertical-sidenav-item>
+        </vertical-sidenav-item>
+        <vertical-sidenav-item title="Import Theme">
+          <vertical-sidenav-item title="Prebuilt Themes" [count]=2></vertical-sidenav-item>
+          <vertical-sidenav-item title="Custom Theme"></vertical-sidenav-item>
+        </vertical-sidenav-item>
+        <vertical-sidenav-item title="Import Modules">
+          <vertical-sidenav-item title="Button" [count]=3></vertical-sidenav-item>
+          <vertical-sidenav-item title="Form Fied" [count]=2></vertical-sidenav-item>
+          <vertical-sidenav-item title="Input" [count]=1></vertical-sidenav-item>
+          <vertical-sidenav-item title="Tabs" [count]=1></vertical-sidenav-item>
+        </vertical-sidenav-item>
+        <vertical-sidenav-item title="Display Components"></vertical-sidenav-item>
+      </vertical-sidenav-item>
+    </vertical-sidenav-group>
+    <vertical-sidenav-group title="Overline">
+      <vertical-sidenav-item title="First" [count]=123>
+        <vertical-sidenav-item title="Sub" [count]=9>
+          <vertical-sidenav-item title="Sub2" [count]=127></vertical-sidenav-item>
+        </vertical-sidenav-item>
+      </vertical-sidenav-item>
+      <vertical-sidenav-item title="Very Long Title Even Longer" [count]=1></vertical-sidenav-item>
+    </vertical-sidenav-group>
+  </nav>
+</section>

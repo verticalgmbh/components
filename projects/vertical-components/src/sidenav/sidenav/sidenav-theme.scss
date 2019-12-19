@@ -1,0 +1,13 @@
+@import "../sidenav-group/sidenav-group-theme.scss";
+@import "../sidenav-item/sidenav-item-theme.scss";
+
+@mixin vertical-sidenav-theme($theme) {
+  $primary: map-get($theme, primary);
+
+  .vertical-sidenav {
+    background-color: #f5f5f5;
+  }
+
+  @include vertical-sidenav-group-theme($theme);
+  @include vertical-sidenav-item-theme($theme);
+}

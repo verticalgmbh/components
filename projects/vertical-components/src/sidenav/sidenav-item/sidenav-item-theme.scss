@@ -1,0 +1,38 @@
+@mixin vertical-sidenav-item-theme($theme) {
+  $primary: map-get($theme, primary);
+
+  .vertical-sidenav-item {
+    &.active {
+      > .vertical-sidenav-item__body {
+        &::before {
+          background-color: white;
+          box-shadow: inset 4px 0px 0px 0px mat-color($primary, 900);
+        }
+
+        .vertical-sidenav-item__name {
+          color: mat-color($primary, 900);
+        }
+
+        .vertical-sidenav-item__count {
+          background-color: mat-color($primary, 900);
+          color: mat-contrast($primary, 900);
+        }
+
+        .vertical-sidenav-item__arrow {
+          color: mat-contrast($primary, 50);
+        }
+      }
+    }
+  }
+
+  .vertical-sidenav-item__body {
+    .vertical-sidenav-item__count {
+      background-color: mat-contrast($primary, 900);
+      color: mat-color($primary, 900);
+    }
+
+    .vertical-sidenav-item__arrow {
+      color: rgba(mat-contrast($primary, 50), 0.54);
+    }
+  }
+}

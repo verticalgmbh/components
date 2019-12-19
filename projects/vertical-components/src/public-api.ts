@@ -21,6 +21,10 @@ export * from './form-field/form-field';
 export * from './input/input.module';
 export * from './input/input';
 
+// Sidenav
+export * from './sidenav/sidenav/sidenav.module';
+export * from './sidenav/sidenav/sidenav';
+
 // Tabs
 export * from './tabs/tabs.module';
 export * from './tabs/tab-group/tab-group.component';

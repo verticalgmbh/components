@@ -4,6 +4,7 @@
 @import "../src/checkbox/checkbox-theme.scss";
 @import "../src/form-field/form-field-theme.scss";
 @import "../src/input/input-theme.scss";
+@import "../src/sidenav/sidenav/sidenav-theme.scss";
 @import "../src/tabs/tabs.scss";
 
 // Create a theme
@@ -13,5 +14,6 @@
   @include vertical-checkbox-theme($theme);
   @include vertical-form-field-theme($theme);
   @include vertical-input-theme($theme);
+  @include vertical-sidenav-theme($theme);
   @include vertical-tabs-theme($theme);
 }
