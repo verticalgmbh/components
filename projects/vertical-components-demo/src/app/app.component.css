@@ -28,3 +28,7 @@ h2 {
   grid-column-gap: 32px;
   width: 50%;
 }
+
+.table {
+  width: 866px;
+}

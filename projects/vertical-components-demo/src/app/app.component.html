@@ -75,7 +75,7 @@
   </vertical-form-field>
 </section>
 
-<h1>Table</h1>
+<!-- <h1>Table</h1>
 <section>
   <table vertical-table
          [dataSource]="dataSource"
@@ -84,18 +84,21 @@
          [stickyFooter]="false">
     <caption vertical-caption>Caption</caption>
 
-    <!-- 1st column -->
     <ng-container verticalColumnDef="test">
       <th vertical-header-cell>Header</th>
       <td vertical-cell *verticalCellDef="let element">{{element.position}}</td>
       <td vertical-footer-cell>Footer</td>
     </ng-container>
 
-    <!-- 2nd column -->
     <ng-container verticalColumnDef="test2">
       <th vertical-header-cell>Header2</th>
       <td vertical-cell *verticalCellDef="let element">{{element.name}}</td>
       <td vertical-footer-cell>Footer2</td>
     </ng-container>
   </table>
+</section> -->
+
+<h1>Table</h1>
+<section class="table">
+  <table vertical-table></table>
 </section>
