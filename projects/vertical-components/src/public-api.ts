@@ -12,6 +12,10 @@ export * from './button/text-button/text-button.component';
 export * from './form-field/form-field.module';
 export * from './form-field/form-field';
 
+// Header
+export * from './header/header.module';
+export * from './header/header';
+
 // Input
 export * from './input/input.module';
 export * from './input/input';
