@@ -1,0 +1,7 @@
+@mixin vertical-sort-theme($theme) {
+  $primary: map-get($theme, primary);
+
+  .sort-icon {
+    color: rgba(mat-contrast($primary, 50), 0.54);
+  }
+}

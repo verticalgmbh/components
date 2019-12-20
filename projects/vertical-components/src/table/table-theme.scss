@@ -1,5 +1,9 @@
+@import "./sort/sort-theme.scss";
+
 @mixin vertical-table-theme($theme) {
   $primary: map-get($theme, primary);
+
+  @include vertical-sort-theme($theme);
 
   .vertical-table-header {
     &__row {
@@ -30,10 +34,6 @@
 
   .checkbox {
     color: mat-color($primary, 900);
-  }
-
-  .sort-icon {
-    color: rgba(mat-contrast($primary, 50), 0.54);
   }
 
   .check-circle {

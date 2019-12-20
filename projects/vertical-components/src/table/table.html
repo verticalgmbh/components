@@ -24,17 +24,7 @@
 
 <thead class="vertical-table-header">
   <tr class="vertical-table-header__row">
-    <th class="vertical-table-header__cell">
-      <mat-icon class="checkbox">indeterminate_check_box</mat-icon>
-    </th>
-    <th class="vertical-table-header__cell">Vorname</th>
-    <th class="vertical-table-header__cell">Nachname</th>
-    <th class="vertical-table-header__cell">Standort</th>
-    <th class="vertical-table-header__cell">Aktuelle Kosten</th>
-    <th class="vertical-table-header__cell">
-      Status
-      <mat-icon class="sort-icon">arrow_downward</mat-icon>
-    </th>
+    <ng-content select="[vertical-header-cell]"></ng-content>
   </tr>
 </thead>
 <tbody class="vertical-table-body">
