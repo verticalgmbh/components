@@ -1,0 +1,9 @@
+@import "./chip/chip-theme.scss";
+@import "./chip-list/chip-list-theme.scss";
+
+@mixin vertical-chips-theme($theme) {
+  $primary: map-get($theme, primary);
+
+  @include vertical-chip-theme($theme);
+  @include vertical-chip-list-theme($theme);
+}

@@ -8,6 +8,11 @@ export * from './button/contained-button/contained-button.component';
 export * from './button/outlined-button/outlined-button.component';
 export * from './button/text-button/text-button.component';
 
+// Chips
+export * from './chips/chips.module';
+export * from './chips/chip/chip';
+export * from './chips/chip-list/chip-list';
+
 // Form field
 export * from './form-field/form-field.module';
 export * from './form-field/form-field';
