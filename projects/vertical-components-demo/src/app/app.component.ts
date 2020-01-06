@@ -14,4 +14,6 @@ export class AppComponent {
       this.emailFormControl.hasError('email') ? 'Not a valid email' :
         '';
   }
+
+  test = true;
 }

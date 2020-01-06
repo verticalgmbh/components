@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { VerticalButtonModule, VerticalTabsModule, VerticalFormFieldModule, VerticalInputModule, VerticalCheckboxModule, VerticalSidenavModule } from 'projects/vertical-components/src/public-api';
@@ -10,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     VerticalButtonModule,
     VerticalTabsModule,

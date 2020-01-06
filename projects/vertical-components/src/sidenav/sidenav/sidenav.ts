@@ -3,7 +3,7 @@ import { VerticalSidenavItem } from '../sidenav-item/sidenav-item';
 import { takeWhile, tap } from 'rxjs/operators';
 
 @Component({
-  selector: 'nav[vertical-sidenav]',
+  selector: 'vertical-sidenav',
   templateUrl: 'sidenav.html',
   styleUrls: ['sidenav.scss'],
   host: {

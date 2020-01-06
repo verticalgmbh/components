@@ -1,97 +1,4 @@
-<h1>Buttons</h1>
-
-<h2>Contained Button</h2>
-<section class="buttons">
-  <button vertical-contained-button>Button</button>
-  <button vertical-contained-button disabled>Button</button>
-</section>
-
-<h2>Outlined Button</h2>
-<section class="buttons">
-  <button vertical-outlined-button>Button</button>
-  <button vertical-outlined-button disabled>Button</button>
-</section>
-
-<h2>Text Button</h2>
-<section class="buttons">
-  <button vertical-text-button>Button</button>
-  <button vertical-text-button disabled>Button</button>
-</section>
-
-<h1>Tabs</h1>
-<div vertical-tab-group>
-  <div vertical-tab>Tab1</div>
-  <div vertical-tab>Tab2</div>
-  <div vertical-tab>Tab3</div>
-</div>
-
-<h1>Form fields</h1>
-<section class="form-fields">
-  <h2>Filled form field</h2>
-  <h2>Outlined form field</h2>
-
-  <vertical-form-field>
-    <vertical-label>Label</vertical-label>
-    <input vertical-input placeholder="Input">
-    <mat-icon verticalSuffix>visibility</mat-icon>
-    <vertical-hint>Hint</vertical-hint>
-  </vertical-form-field>
-
-  <vertical-form-field appearance="outlined">
-    <vertical-label>Label</vertical-label>
-    <input vertical-input placeholder="Input">
-    <mat-icon verticalSuffix>visibility</mat-icon>
-    <vertical-hint>Hint</vertical-hint>
-  </vertical-form-field>
-
-  <vertical-form-field>
-    <vertical-label>Label</vertical-label>
-    <input type="email" vertical-input placeholder="Email" required [formControl]="emailFormControl">
-    <mat-icon verticalSuffix>visibility</mat-icon>
-    <vertical-hint>Hint</vertical-hint>
-    <vertical-error *ngIf="emailFormControl.invalid">{{ getErrorMessage() }}</vertical-error>
-  </vertical-form-field>
-
-  <vertical-form-field appearance="outlined">
-    <vertical-label>Label</vertical-label>
-    <input type="email" vertical-input placeholder="Email" required [formControl]="emailFormControl">
-    <mat-icon verticalSuffix>visibility</mat-icon>
-    <vertical-hint>Hint</vertical-hint>
-    <vertical-error *ngIf="emailFormControl.invalid">{{ getErrorMessage() }}</vertical-error>
-  </vertical-form-field>
-
-  <vertical-form-field>
-    <vertical-label>Label</vertical-label>
-    <input vertical-input placeholder="Input" disabled>
-    <mat-icon verticalSuffix>visibility</mat-icon>
-    <vertical-hint>Hint</vertical-hint>
-  </vertical-form-field>
-
-  <vertical-form-field appearance="outlined">
-    <vertical-label>Label</vertical-label>
-    <input vertical-input placeholder="Input" disabled>
-    <mat-icon verticalSuffix>visibility</mat-icon>
-    <vertical-hint>Hint</vertical-hint>
-  </vertical-form-field>
-</section>
-
-<h1>Checkbox</h1>
-<section class="checkbox">
-  <h2>labelPosition = "after"</h2>
-  <h2>labelPosition = "before"</h2>
-  <vertical-checkbox>Label</vertical-checkbox>
-  <vertical-checkbox [labelPosition]="'before'">Label</vertical-checkbox>
-  <vertical-checkbox [checked]="true">Checked</vertical-checkbox>
-  <vertical-checkbox [checked]="true" [labelPosition]="'before'">Checked</vertical-checkbox>
-  <vertical-checkbox [indeterminate]="true">Indeterminate</vertical-checkbox>
-  <vertical-checkbox [indeterminate]="true" [labelPosition]="'before'">Indeterinate</vertical-checkbox>
-  <vertical-checkbox [disabled]="true">Disabled</vertical-checkbox>
-  <vertical-checkbox [disabled]="true" [labelPosition]="'before'">Disabled</vertical-checkbox>
-</section>
-
-<h1>Sidenav</h1>
-<section>
-  <nav vertical-sidenav>
+<!-- <nav vertical-sidenav>
     <vertical-sidenav-group title="Component Library">
       <vertical-sidenav-item title="Getting Started">
         <vertical-sidenav-item title="Installation">
@@ -119,5 +26,130 @@
       </vertical-sidenav-item>
       <vertical-sidenav-item title="Very Long Title Even Longer" [count]=1></vertical-sidenav-item>
     </vertical-sidenav-group>
-  </nav>
-</section>
+  </nav> -->
+
+<vertical-sidenav-container [opened]="test">
+  <vertical-sidenav>
+    <vertical-sidenav-group title="Component Library">
+      <vertical-sidenav-item title="Getting Started">
+        <vertical-sidenav-item title="Installation">
+          <vertical-sidenav-item title="Install Library" [count]=1></vertical-sidenav-item>
+          <vertical-sidenav-item title="Install Dependencies" [count]=4></vertical-sidenav-item>
+        </vertical-sidenav-item>
+        <vertical-sidenav-item title="Import Theme">
+          <vertical-sidenav-item title="Prebuilt Themes" [count]=2></vertical-sidenav-item>
+          <vertical-sidenav-item title="Custom Theme"></vertical-sidenav-item>
+        </vertical-sidenav-item>
+        <vertical-sidenav-item title="Import Modules">
+          <vertical-sidenav-item title="Button" [count]=3></vertical-sidenav-item>
+          <vertical-sidenav-item title="Form Fied" [count]=2></vertical-sidenav-item>
+          <vertical-sidenav-item title="Input" [count]=1></vertical-sidenav-item>
+          <vertical-sidenav-item title="Tabs" [count]=1></vertical-sidenav-item>
+        </vertical-sidenav-item>
+        <vertical-sidenav-item title="Display Components"></vertical-sidenav-item>
+      </vertical-sidenav-item>
+    </vertical-sidenav-group>
+    <vertical-sidenav-group title="Overline">
+      <vertical-sidenav-item title="First" [count]=123>
+        <vertical-sidenav-item title="Sub" [count]=9>
+          <vertical-sidenav-item title="Sub2" [count]=127></vertical-sidenav-item>
+        </vertical-sidenav-item>
+      </vertical-sidenav-item>
+      <vertical-sidenav-item title="Very Long Title Even Longer" [count]=1></vertical-sidenav-item>
+    </vertical-sidenav-group>
+  </vertical-sidenav>
+  <vertical-sidenav-content>
+    <button (click)="test = !test" vertical-contained-button>Toggle Sidenav</button>
+
+    <h1>Buttons</h1>
+
+    <h2>Contained Button</h2>
+    <section class="buttons">
+      <button vertical-contained-button>Button</button>
+      <button vertical-contained-button disabled>Button</button>
+    </section>
+
+    <h2>Outlined Button</h2>
+    <section class="buttons">
+      <button vertical-outlined-button>Button</button>
+      <button vertical-outlined-button disabled>Button</button>
+    </section>
+
+    <h2>Text Button</h2>
+    <section class="buttons">
+      <button vertical-text-button>Button</button>
+      <button vertical-text-button disabled>Button</button>
+    </section>
+
+    <h1>Tabs</h1>
+    <div vertical-tab-group>
+      <div vertical-tab>Tab1</div>
+      <div vertical-tab>Tab2</div>
+      <div vertical-tab>Tab3</div>
+    </div>
+
+    <h1>Form fields</h1>
+    <section class="form-fields">
+      <h2>Filled form field</h2>
+      <h2>Outlined form field</h2>
+
+      <vertical-form-field>
+        <vertical-label>Label</vertical-label>
+        <input vertical-input placeholder="Input">
+        <mat-icon verticalSuffix>visibility</mat-icon>
+        <vertical-hint>Hint</vertical-hint>
+      </vertical-form-field>
+
+      <vertical-form-field appearance="outlined">
+        <vertical-label>Label</vertical-label>
+        <input vertical-input placeholder="Input">
+        <mat-icon verticalSuffix>visibility</mat-icon>
+        <vertical-hint>Hint</vertical-hint>
+      </vertical-form-field>
+
+      <vertical-form-field>
+        <vertical-label>Label</vertical-label>
+        <input type="email" vertical-input placeholder="Email" required [formControl]="emailFormControl">
+        <mat-icon verticalSuffix>visibility</mat-icon>
+        <vertical-hint>Hint</vertical-hint>
+        <vertical-error *ngIf="emailFormControl.invalid">{{ getErrorMessage() }}</vertical-error>
+      </vertical-form-field>
+
+      <vertical-form-field appearance="outlined">
+        <vertical-label>Label</vertical-label>
+        <input type="email" vertical-input placeholder="Email" required [formControl]="emailFormControl">
+        <mat-icon verticalSuffix>visibility</mat-icon>
+        <vertical-hint>Hint</vertical-hint>
+        <vertical-error *ngIf="emailFormControl.invalid">{{ getErrorMessage() }}</vertical-error>
+      </vertical-form-field>
+
+      <vertical-form-field>
+        <vertical-label>Label</vertical-label>
+        <input vertical-input placeholder="Input" disabled>
+        <mat-icon verticalSuffix>visibility</mat-icon>
+        <vertical-hint>Hint</vertical-hint>
+      </vertical-form-field>
+
+      <vertical-form-field appearance="outlined">
+        <vertical-label>Label</vertical-label>
+        <input vertical-input placeholder="Input" disabled>
+        <mat-icon verticalSuffix>visibility</mat-icon>
+        <vertical-hint>Hint</vertical-hint>
+      </vertical-form-field>
+    </section>
+
+    <h1>Checkbox</h1>
+    <section class="checkbox">
+      <h2>labelPosition = "after"</h2>
+      <h2>labelPosition = "before"</h2>
+      <vertical-checkbox>Label</vertical-checkbox>
+      <vertical-checkbox [labelPosition]="'before'">Label</vertical-checkbox>
+      <vertical-checkbox [checked]="true">Checked</vertical-checkbox>
+      <vertical-checkbox [checked]="true" [labelPosition]="'before'">Checked</vertical-checkbox>
+      <vertical-checkbox [indeterminate]="true">Indeterminate</vertical-checkbox>
+      <vertical-checkbox [indeterminate]="true" [labelPosition]="'before'">Indeterinate</vertical-checkbox>
+      <vertical-checkbox [disabled]="true">Disabled</vertical-checkbox>
+      <vertical-checkbox [disabled]="true" [labelPosition]="'before'">Disabled</vertical-checkbox>
+    </section>
+  </vertical-sidenav-content>
+</vertical-sidenav-container>
