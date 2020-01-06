@@ -28,6 +28,8 @@
     </vertical-sidenav-group>
   </nav> -->
 
+<header vertical-header></header>
+
 <vertical-sidenav-container [opened]="test">
   <vertical-sidenav>
     <vertical-sidenav-group title="Component Library">
@@ -50,6 +52,16 @@
       </vertical-sidenav-item>
     </vertical-sidenav-group>
     <vertical-sidenav-group title="Overline">
+      <vertical-sidenav-item title="First" [count]=123>
+        <vertical-sidenav-item title="Sub" [count]=9>
+          <vertical-sidenav-item title="Sub2" [count]=127></vertical-sidenav-item>
+        </vertical-sidenav-item>
+      </vertical-sidenav-item>
+      <vertical-sidenav-item title="First" [count]=123>
+        <vertical-sidenav-item title="Sub" [count]=9>
+          <vertical-sidenav-item title="Sub2" [count]=127></vertical-sidenav-item>
+        </vertical-sidenav-item>
+      </vertical-sidenav-item>
       <vertical-sidenav-item title="First" [count]=123>
         <vertical-sidenav-item title="Sub" [count]=9>
           <vertical-sidenav-item title="Sub2" [count]=127></vertical-sidenav-item>

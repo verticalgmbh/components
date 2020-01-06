@@ -4,7 +4,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { VerticalButtonModule, VerticalTabsModule, VerticalFormFieldModule, VerticalInputModule, VerticalCheckboxModule, VerticalSidenavModule } from 'projects/vertical-components/src/public-api';
+import { VerticalButtonModule, VerticalTabsModule, VerticalFormFieldModule, VerticalInputModule, VerticalCheckboxModule, VerticalSidenavModule, VerticalHeaderModule } from 'projects/vertical-components/src/public-api';
+
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     VerticalInputModule,
     MatIconModule,
     VerticalCheckboxModule,
-    VerticalSidenavModule],
+    VerticalSidenavModule,
+    VerticalHeaderModule],
   providers: [],
   bootstrap: [AppComponent]
 })
