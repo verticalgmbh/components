@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, ContentChildren, Input, HostListener, EventEmitter, ChangeDetectorRef, AfterViewInit, AfterContentInit, QueryList } from '@angular/core';
-import { hostViewClassName } from '@angular/compiler';
+import { AfterContentInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChildren, EventEmitter, HostListener, Input, QueryList } from '@angular/core';
 
 @Component({
   selector: 'vertical-sidenav-item',
@@ -17,7 +16,7 @@ export class VerticalSidenavItem implements AfterContentInit {
   hasChildren: boolean = false;
   isExpanded: boolean = false;
   isActive: boolean = false;
-  arrowIcon: 'keyboard_arrow_right' | 'keyboard_arrow_up' = 'keyboard_arrow_right';
+  arrowIcon: 'keyboard_arrow_right' | 'keyboard_arrow_down' = 'keyboard_arrow_right';
   click = new EventEmitter<VerticalSidenavItem>();
   @Input() title: string;
   @Input() count: number = 0;
@@ -41,7 +40,7 @@ export class VerticalSidenavItem implements AfterContentInit {
   }
 
   private _toggleArrowIcon() {
-    this.arrowIcon = this.isExpanded ? 'keyboard_arrow_up' : 'keyboard_arrow_right';
+    this.arrowIcon = this.isExpanded ? 'keyboard_arrow_down' : 'keyboard_arrow_right';
   }
 
   expandItems() {

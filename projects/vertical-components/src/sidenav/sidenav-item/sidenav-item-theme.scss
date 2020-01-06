@@ -23,6 +23,22 @@
         }
       }
     }
+
+    &:hover {
+      > .vertical-sidenav-item__body {
+        &::before {
+          background-color: rgba(white, 0.6);
+        }
+      }
+    }
+
+    &:not(.active):hover {
+      > .vertical-sidenav-item__body {
+        &::before {
+          background-color: rgba(black, 0.04);
+        }
+      }
+    }
   }
 
   .vertical-sidenav-item__body {
