@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { VerticalChip } from './chip/chip';
+
 import { VerticalChipList } from './chip-list/chip-list';
+import { VerticalChip } from './chip/chip';
 
 @NgModule({
   declarations: [VerticalChip, VerticalChipList],

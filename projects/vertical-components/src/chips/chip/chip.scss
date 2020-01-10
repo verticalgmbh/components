@@ -1,11 +1,11 @@
 :host.vertical-chip {
-  display: inline-flex;
   border-radius: 1rem;
+  cursor: default;
+  display: inline-flex;
   font-size: 0.875rem;
+  font-weight: 500;
   justify-self: center;
   line-height: 1rem;
-  font-weight: 500;
-  padding: 0.4375rem 0.75rem;
-  cursor: default;
   margin: 0.25rem;
+  padding: 0.4375rem 0.75rem;
 }

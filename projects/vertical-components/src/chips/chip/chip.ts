@@ -1,3 +1,5 @@
+// Please note that chips only have styling as of right now. All dynamic parts have to be added.
+
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
