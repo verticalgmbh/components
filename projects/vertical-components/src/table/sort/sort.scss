@@ -6,4 +6,22 @@
   user-select: none;
   vertical-align: middle;
   width: 0.9375rem;
+  opacity: 0;
+}
+
+.sort-container {
+  display: inline-block;
+  width: 100%;
+}
+
+:host.active {
+  .sort-icon {
+    opacity: 1;
+  }
+}
+
+:host:not(.active):hover {
+  .sort-icon {
+    opacity: 0.54;
+  }
 }

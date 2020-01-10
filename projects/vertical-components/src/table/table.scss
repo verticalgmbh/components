@@ -16,6 +16,7 @@
   text-align: left;
   letter-spacing: 0.4px;
   font-weight: 500;
+  user-select: none;
 
   &:not(:first-child) {
     &::before {

@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Directive } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Directive, HostBinding, EventEmitter, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[vertical-header-cell]',
@@ -7,4 +7,5 @@ import { Component, ChangeDetectionStrategy, Directive } from '@angular/core';
   }
 })
 
-export class VerticalHeaderCell { }
+export class VerticalHeaderCell {
+}
