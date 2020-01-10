@@ -28,3 +28,8 @@ h2 {
   grid-column-gap: 32px;
   width: 50%;
 }
+
+.checkbox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
