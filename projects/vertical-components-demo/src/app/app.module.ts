@@ -1,27 +1,33 @@
+// Common
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { AppComponent } from './app.component';
-import { VerticalButtonModule, VerticalTabsModule, VerticalFormFieldModule, VerticalInputModule, VerticalCheckboxModule, VerticalSidenavModule, VerticalHeaderModule } from 'projects/vertical-components/src/public-api';
-
 import { ReactiveFormsModule } from '@angular/forms';
+
+// Material
+import { MatIconModule } from '@angular/material/icon';
+
+// Custom
+import { AppComponent } from './app.component';
+import { VerticalButtonModule, VerticalCheckboxModule, VerticalFormFieldModule, VerticalHeaderModule, VerticalInputModule, VerticalSidenavModule, VerticalTabsModule } from 'projects/vertical-components/src/public-api';
+
+
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
     BrowserAnimationsModule,
+    BrowserModule,
+    MatIconModule,
     ReactiveFormsModule,
     VerticalButtonModule,
-    VerticalTabsModule,
-    VerticalFormFieldModule,
-    VerticalInputModule,
-    MatIconModule,
     VerticalCheckboxModule,
+    VerticalFormFieldModule,
+    VerticalHeaderModule,
+    VerticalInputModule,
     VerticalSidenavModule,
-    VerticalHeaderModule],
+    VerticalTabsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

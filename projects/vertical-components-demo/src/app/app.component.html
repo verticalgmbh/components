@@ -1,77 +1,47 @@
-<!-- <nav vertical-sidenav>
-    <vertical-sidenav-group title="Component Library">
-      <vertical-sidenav-item title="Getting Started">
-        <vertical-sidenav-item title="Installation">
-          <vertical-sidenav-item title="Install Library" [count]=1></vertical-sidenav-item>
-          <vertical-sidenav-item title="Install Dependencies" [count]=4></vertical-sidenav-item>
-        </vertical-sidenav-item>
-        <vertical-sidenav-item title="Import Theme">
-          <vertical-sidenav-item title="Prebuilt Themes" [count]=2></vertical-sidenav-item>
-          <vertical-sidenav-item title="Custom Theme"></vertical-sidenav-item>
-        </vertical-sidenav-item>
-        <vertical-sidenav-item title="Import Modules">
-          <vertical-sidenav-item title="Button" [count]=3></vertical-sidenav-item>
-          <vertical-sidenav-item title="Form Fied" [count]=2></vertical-sidenav-item>
-          <vertical-sidenav-item title="Input" [count]=1></vertical-sidenav-item>
-          <vertical-sidenav-item title="Tabs" [count]=1></vertical-sidenav-item>
-        </vertical-sidenav-item>
-        <vertical-sidenav-item title="Display Components"></vertical-sidenav-item>
-      </vertical-sidenav-item>
-    </vertical-sidenav-group>
-    <vertical-sidenav-group title="Overline">
-      <vertical-sidenav-item title="First" [count]=123>
-        <vertical-sidenav-item title="Sub" [count]=9>
-          <vertical-sidenav-item title="Sub2" [count]=127></vertical-sidenav-item>
-        </vertical-sidenav-item>
-      </vertical-sidenav-item>
-      <vertical-sidenav-item title="Very Long Title Even Longer" [count]=1></vertical-sidenav-item>
-    </vertical-sidenav-group>
-  </nav> -->
-
 <header vertical-header></header>
 
-<vertical-sidenav-container [opened]="test">
+<vertical-sidenav-container [opened]="sidenavOpened">
   <vertical-sidenav>
     <vertical-sidenav-group title="Component Library">
-      <vertical-sidenav-item title="Getting Started">
-        <vertical-sidenav-item title="Installation">
-          <vertical-sidenav-item title="Install Library" [count]=1></vertical-sidenav-item>
-          <vertical-sidenav-item title="Install Dependencies" [count]=4></vertical-sidenav-item>
-        </vertical-sidenav-item>
-        <vertical-sidenav-item title="Import Theme">
-          <vertical-sidenav-item title="Prebuilt Themes" [count]=2></vertical-sidenav-item>
-          <vertical-sidenav-item title="Custom Theme"></vertical-sidenav-item>
-        </vertical-sidenav-item>
-        <vertical-sidenav-item title="Import Modules">
-          <vertical-sidenav-item title="Button" [count]=3></vertical-sidenav-item>
-          <vertical-sidenav-item title="Form Fied" [count]=2></vertical-sidenav-item>
-          <vertical-sidenav-item title="Input" [count]=1></vertical-sidenav-item>
-          <vertical-sidenav-item title="Tabs" [count]=1></vertical-sidenav-item>
-        </vertical-sidenav-item>
-        <vertical-sidenav-item title="Display Components"></vertical-sidenav-item>
-      </vertical-sidenav-item>
+      <div div vertical-sidenav-item title="Getting Started">
+        <div vertical-sidenav-item title="Installation">
+          <div vertical-sidenav-item title="Install Library" [count]=1></div>
+          <div vertical-sidenav-item title="Install Dependencies" [count]=4></div>
+        </div>
+        <div vertical-sidenav-item title="Import Theme">
+          <div vertical-sidenav-item title="Prebuilt Themes" [count]=2></div>
+          <div vertical-sidenav-item title="Custom Theme"></div>
+        </div>
+        <div vertical-sidenav-item title="Import Modules">
+          <div vertical-sidenav-item title="Button" [count]=3></div>
+          <div vertical-sidenav-item title="Form Fied" [count]=2></div>
+          <div vertical-sidenav-item title="Input" [count]=1></div>
+          <div vertical-sidenav-item title="Tabs" [count]=1></div>
+        </div>
+        <div vertical-sidenav-item title="Display Components"></div>
+      </div>
     </vertical-sidenav-group>
     <vertical-sidenav-group title="Overline">
-      <vertical-sidenav-item title="First" [count]=123>
-        <vertical-sidenav-item title="Sub" [count]=9>
-          <vertical-sidenav-item title="Sub2" [count]=127></vertical-sidenav-item>
-        </vertical-sidenav-item>
-      </vertical-sidenav-item>
-      <vertical-sidenav-item title="First" [count]=123>
-        <vertical-sidenav-item title="Sub" [count]=9>
-          <vertical-sidenav-item title="Sub2" [count]=127></vertical-sidenav-item>
-        </vertical-sidenav-item>
-      </vertical-sidenav-item>
-      <vertical-sidenav-item title="First" [count]=123>
-        <vertical-sidenav-item title="Sub" [count]=9>
-          <vertical-sidenav-item title="Sub2" [count]=127></vertical-sidenav-item>
-        </vertical-sidenav-item>
-      </vertical-sidenav-item>
-      <vertical-sidenav-item title="Very Long Title Even Longer" [count]=1></vertical-sidenav-item>
+      <div vertical-sidenav-item title="First" [count]=123>
+        <div vertical-sidenav-item title="Sub" [count]=9>
+          <div vertical-sidenav-item title="Sub2" [count]=127></div>
+        </div>
+      </div>
+      <div vertical-sidenav-item title="First" [count]=123>
+        <div vertical-sidenav-item title="Sub" [count]=9>
+          <div vertical-sidenav-item title="Sub2" [count]=127></div>
+        </div>
+      </div>
+      <div vertical-sidenav-item title="First" [count]=123>
+        <div vertical-sidenav-item title="Sub" [count]=9>
+          <div vertical-sidenav-item title="Sub2" [count]=127></div>
+        </div>
+      </div>
+      <div vertical-sidenav-item title="Very Long Title Even Longer" [count]=1></div>
     </vertical-sidenav-group>
   </vertical-sidenav>
   <vertical-sidenav-content>
-    <button (click)="test = !test" vertical-contained-button>Toggle Sidenav</button>
+    <button (click)="sidenavOpened = !sidenavOpened" vertical-contained-button>Toggle Sidenav</button>
 
     <h1>Buttons</h1>
 

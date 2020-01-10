@@ -15,5 +15,5 @@ export class AppComponent {
         '';
   }
 
-  test = true;
+  sidenavOpened = true;
 }

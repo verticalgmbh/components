@@ -1,7 +1,7 @@
 import { AfterContentInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChildren, EventEmitter, HostListener, Input, QueryList } from '@angular/core';
 
 @Component({
-  selector: 'vertical-sidenav-item',
+  selector: '[vertical-sidenav-item]',
   templateUrl: 'sidenav-item.html',
   styleUrls: ['sidenav-item.scss'],
   host: {
@@ -12,7 +12,6 @@ import { AfterContentInit, ChangeDetectionStrategy, ChangeDetectorRef, Component
 })
 
 export class VerticalSidenavItem implements AfterContentInit {
-
   arrowIcon: 'keyboard_arrow_right' | 'keyboard_arrow_down' = 'keyboard_arrow_right';
   click = new EventEmitter<VerticalSidenavItem>();
   hasChildren: boolean = false;

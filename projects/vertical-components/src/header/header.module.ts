@@ -4,7 +4,7 @@ import { VerticalHeader } from './header';
 import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  declarations: [VerticalHeader,],
+  declarations: [VerticalHeader],
   imports: [
     CommonModule,
     MatIconModule
