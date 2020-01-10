@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { VerticalHeader } from './header';
 import { MatIconModule } from '@angular/material/icon';
+
+import { VerticalHeader } from './header';
 
 @NgModule({
   declarations: [VerticalHeader,],
