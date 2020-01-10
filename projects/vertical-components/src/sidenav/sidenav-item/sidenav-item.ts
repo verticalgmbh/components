@@ -13,13 +13,13 @@ import { AfterContentInit, ChangeDetectionStrategy, ChangeDetectorRef, Component
 
 export class VerticalSidenavItem implements AfterContentInit {
 
-  hasChildren: boolean = false;
-  isExpanded: boolean = false;
-  isActive: boolean = false;
   arrowIcon: 'keyboard_arrow_right' | 'keyboard_arrow_down' = 'keyboard_arrow_right';
   click = new EventEmitter<VerticalSidenavItem>();
-  @Input() title: string;
+  hasChildren: boolean = false;
+  isActive: boolean = false;
+  isExpanded: boolean = false;
   @Input() count: number = 0;
+  @Input() title: string;
 
   @HostListener('click')
   onClick() {

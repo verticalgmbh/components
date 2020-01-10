@@ -1,4 +1,8 @@
 .vertical-sidenav-group {
+  &__divider {
+    margin: 1rem 0;
+  }
+
   &__title {
     display: inline-block;
     font-size: 0.75rem;
@@ -7,9 +11,5 @@
     line-height: 1rem;
     padding: 0.625rem;
     text-transform: uppercase;
-  }
-
-  &__divider {
-    margin: 1rem 0;
   }
 }

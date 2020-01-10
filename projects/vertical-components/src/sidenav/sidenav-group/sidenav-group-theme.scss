@@ -2,12 +2,12 @@
   $primary: map-get($theme, primary);
 
   .vertical-sidenav-group {
-    &__title {
-      color: rgba(mat-contrast($primary, 50), 0.87);
-    }
-
     &__divider {
       border-color: white;
+    }
+
+    &__title {
+      color: rgba(mat-contrast($primary, 50), 0.87);
     }
   }
 }

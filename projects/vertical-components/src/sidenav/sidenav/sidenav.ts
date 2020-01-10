@@ -1,6 +1,9 @@
-import { ChangeDetectionStrategy, Component, Input, ContentChildren, AfterContentChecked, AfterContentInit, QueryList, AfterViewInit, ChangeDetectorRef } from '@angular/core';
-import { VerticalSidenavItem } from '../sidenav-item/sidenav-item';
+//TODO: Parent title should be bold + colored when child is active (problem: There is no css selector for the previous sibling, which would be needed)
+//TODO: Scrollbar for the sidenav-content section should not be fullscreen. The content section should have it's own scrollbar
+
+import { AfterContentInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChildren, Input, QueryList } from '@angular/core';
 import { takeWhile, tap } from 'rxjs/operators';
+import { VerticalSidenavItem } from '../sidenav-item/sidenav-item';
 
 @Component({
   selector: 'vertical-sidenav',
@@ -22,7 +25,6 @@ export class VerticalSidenav implements AfterContentInit {
   constructor(public cdr: ChangeDetectorRef) { }
 
   ngAfterContentInit(): void {
-    console.log("ContentChildren: ", this.sidenavItems);
     // Set first item to active, if not defined
     this.setActiveItem(this.activeItem ? this.activeItem : this.sidenavItems.toArray()[0]);
 
