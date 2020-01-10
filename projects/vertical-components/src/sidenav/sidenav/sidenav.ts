@@ -1,5 +1,6 @@
 //TODO: Parent title should be bold + colored when child is active (problem: There is no css selector for the previous sibling, which would be needed)
 //TODO: Scrollbar for the sidenav-content section should not be fullscreen. The content section should have it's own scrollbar
+//FIX: When the activeItem is set by user and is a child element, the parent element does not expand
 
 import { AfterContentInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChildren, Input, QueryList } from '@angular/core';
 import { takeWhile, tap } from 'rxjs/operators';
