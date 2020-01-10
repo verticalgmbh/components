@@ -68,13 +68,15 @@ You can find a demo of all components [here](https://components.vertical.de).
 | checkbox   | [Docs][2]       |
 | form-field | [Docs][3]       |
 | input      | [Docs][4]       |
-| tabs       | [Docs][5]       |
+| sidenav    | [Docs][5]       |
+| tabs       | [Docs][6]       |
 | ---------  | --------------- |
-| theming    | [Guide][6]      |
+| theming    | [Guide][7]      |
 
 [1]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/src/button/button.md
 [2]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/src/checkbox/checkbox.md
 [3]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/src/form-field/form-field.md
 [4]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/src/input/input.md
-[5]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/src/tabs/tabs.md
-[6]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/assets/theming.md
+[5]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/src/sidenav/sidenav/sidenav.md
+[6]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/src/tabs/tabs.md
+[7]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/assets/theming.md

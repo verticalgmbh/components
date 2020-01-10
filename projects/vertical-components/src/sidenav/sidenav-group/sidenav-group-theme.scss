@@ -1,0 +1,13 @@
+@mixin vertical-sidenav-group-theme($theme) {
+  $primary: map-get($theme, primary);
+
+  .vertical-sidenav-group {
+    &__divider {
+      border-color: white;
+    }
+
+    &__title {
+      color: rgba(mat-contrast($primary, 50), 0.87);
+    }
+  }
+}

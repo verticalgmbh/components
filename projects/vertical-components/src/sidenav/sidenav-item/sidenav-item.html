@@ -1,0 +1,11 @@
+<section class="vertical-sidenav-item__body">
+  <span class="vertical-sidenav-item__name">{{title}}</span>
+  <span *ngIf="!isExpanded" class="vertical-sidenav-item__count">
+    {{count | limitCount}}
+  </span>
+  <mat-icon *ngIf="hasChildren" class="vertical-sidenav-item__arrow">{{arrowIcon}}</mat-icon>
+</section>
+
+<ng-container *ngIf="isExpanded">
+  <ng-content></ng-content>
+</ng-container>
