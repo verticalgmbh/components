@@ -1,0 +1,19 @@
+@mixin vertical-checkbox-theme($theme) {
+  $primary: map-get($theme, primary);
+
+  .vertical-checkbox__icon {
+    color: mat-color($primary, 900);
+
+    .vertical-checkbox.disabled & {
+      color: rgba(mat-contrast($primary, 50), 0.38);
+    }
+  }
+
+  .vertical-checkbox__label {
+    color: mat-contrast($primary, 50);
+
+    .vertical-checkbox.disabled & {
+      color: rgba(mat-contrast($primary, 50), 0.38);
+    }
+  }
+}
