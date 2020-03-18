@@ -2,140 +2,14 @@
 
 :host.vertical-header {
   align-content: center;
+  align-items: center;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: [menu-icon] auto 1.75rem [logo] auto 4.625rem [dropdown1] auto [search] 1fr [cart] auto [dropdown2];
+  grid-template-columns: [left] minmax(auto, 1.75rem) [content-start] 1fr [content-end] minmax(auto, 1.75rem) [right];
+  column-gap: .5rem;
   height: 2.5rem;
   min-width: min-content;
   padding: 0 1.5rem;
   user-select: none;
   width: 100%;
-}
-
-.vertical-header {
-  &__menu-icon {
-    align-self: center;
-    display: flex;
-    font-size: 1.375rem;
-    grid-area: menu-icon;
-    height: 1.375rem;
-    user-select: none;
-    width: 1.375rem;
-  }
-
-  &__logo {
-    align-self: center;
-    background-color: white;
-    display: flex;
-    grid-area: logo;
-    height: 0.9375rem;
-  }
-
-  &__dropdown {
-    align-items: center;
-    display: flex;
-    grid-area: dropdown1;
-
-    &:not(:last-child)::after {
-      content: "";
-      height: 2rem;
-      margin: 0 1.25rem;
-    }
-
-    &-text {
-      font-size: 0.875rem;
-      font-weight: 400;
-      letter-spacing: 0.25px;
-      line-height: 1.25rem;
-    }
-
-    &-icon {
-      font-size: 1.375rem;
-      height: 1.25rem;
-      line-height: 1.25rem;
-      width: 1.375rem;
-    }
-
-    &:last-child {
-      grid-area: dropdown2;
-
-      &::before {
-        content: "";
-        height: 2rem;
-        margin: 0 1.25rem;
-      }
-    }
-  }
-
-  &__search {
-    align-items: center;
-    border-radius: 2px;
-    display: flex;
-    grid-area: search;
-    justify-self: start;
-    width: 15.625rem;
-
-    &-input {
-      background: transparent;
-      border: none;
-      font-size: 0.875rem;
-      line-height: 1.625rem;
-      margin: 0;
-      outline: none;
-      padding: 0;
-      width: 100%;
-
-      &::placeholder {
-        font-size: 0.875rem;
-        font-style: italic;
-        line-height: 1.25rem;
-      }
-    }
-
-    &-icon {
-      font-size: 1.25rem;
-      height: 1.625rem;
-      line-height: 1.625rem;
-      margin: 0.1875rem 0.625rem 0.1875rem 0.1875rem;
-      width: 1.25rem;
-
-      &:last-child {
-        margin: 0.1875rem 0.1875rem 0.1875rem 0.625rem;
-      }
-    }
-
-    &.active {
-      .vertical-header__search {
-        &-input {
-          &::placeholder {
-            display: none;
-          }
-        }
-      }
-    }
-  }
-
-  &__cart {
-    align-self: center;
-    display: flex;
-    grid-area: cart;
-    position: relative;
-
-    &-icon {
-      font-size: 1.25rem;
-      height: 1.25rem;
-      width: 1.25rem;
-    }
-
-    &-count {
-      border-radius: 1rem;
-      font-size: 0.6875rem;
-      font-weight: 700;
-      left: 0.6875rem;
-      line-height: 1rem;
-      padding: 0 0.3125rem;
-      position: absolute;
-      top: -0.3125rem;
-    }
-  }
 }
