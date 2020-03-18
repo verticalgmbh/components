@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
+
+:host.vertical-header {
+  align-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  column-gap: .5rem;
+  display: grid;
+  grid-template-columns: [left] minmax(auto, 1.75rem) [content-start] 1fr [content-end] minmax(auto, 1.75rem) [right];
+  height: 2.5rem;
+  min-width: min-content;
+  padding: 0 1.5rem;
+  user-select: none;
+  width: 100%;
+}

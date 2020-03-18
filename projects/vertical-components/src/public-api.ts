@@ -17,6 +17,10 @@ export * from './checkbox/checkbox';
 export * from './form-field/form-field.module';
 export * from './form-field/form-field';
 
+// Header
+export * from './header/header.module';
+export * from './header/header';
+
 // Input
 export * from './input/input.module';
 export * from './input/input';
