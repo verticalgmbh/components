@@ -65,14 +65,18 @@ You can find a demo of all components [here](https://components.vertical.de).
 | Feature    | Documentation   |
 |------------|-----------------|
 | button     | [Docs][1]       |
-| form-field | [Docs][2]       |
-| input      | [Docs][3]       |
-| tabs       | [Docs][4]       |
+| checkbox   | [Docs][2]       |
+| form-field | [Docs][3]       |
+| header     | [Docs][4]       |
+| input      | [Docs][5]       |
+| tabs       | [Docs][6]       |
 | ---------  | --------------- |
-| theming    | [Guide][5]      |
+| theming    | [Guide][7]      |
 
 [1]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/src/button/button.md
-[2]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/src/form-field/form-field.md
-[3]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/src/input/input.md
-[4]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/src/tabs/tabs.md
-[5]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/assets/theming.md
+[2]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/src/checkbox/checkbox.md
+[3]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/src/form-field/form-field.md
+[4]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/src/header/header.md
+[5]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/src/input/input.md
+[6]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/src/tabs/tabs.md
+[7]: https://github.com/verticalgmbh/components/tree/master/projects/vertical-components/assets/theming.md
