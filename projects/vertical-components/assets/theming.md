@@ -16,8 +16,7 @@ If you're using Agular CLI, just include one line in your `styles.css` file:
 
 When you want to use a custom theme, you can create you own theme file.
 
-A custom theme file needs to do the following things:
-1. Imports the `all-theme.scss` file. This includes all component styles.
+A custom theme `_theming_.scss` file. This includes all component styles.
 2. Defines a color palette. The color palette has to be based on the [Material Design Color System](https://material.io/design/color/#color-theme-creation). You can also create a seperate file for your color palette and import it in to your theme file.
 3. Imports the `mat-core()` Sass mixin. This includes all common styles used by multiple components. This should only be included once in your app.
 4. Defines a theme data-structure. You can create a theme using the `mat-light-theme` or `mat-dark-theme` functions. The output of this function is then passed to the `vertical-theme` mixin, which will output all of the corresponding styles for the theme.
