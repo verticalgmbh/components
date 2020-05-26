@@ -3,6 +3,7 @@
 @import "../src/button/button.scss";
 @import "../src/checkbox/checkbox-theme.scss";
 @import "../src/form-field/form-field-theme.scss";
+@import "../src/header/header-theme.scss";
 @import "../src/input/input-theme.scss";
 @import "../src/tabs/tabs.scss";
 
@@ -12,6 +13,7 @@
   @include vertical-button-theme($theme);
   @include vertical-checkbox-theme($theme);
   @include vertical-form-field-theme($theme);
+  @include vertical-header-theme($theme);
   @include vertical-input-theme($theme);
   @include vertical-tabs-theme($theme);
 }
