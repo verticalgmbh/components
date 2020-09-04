@@ -52,7 +52,7 @@
     "chalk": "^3.0.0",
     "fs-extra": "^8.1.0",
     "inquirer": "^7.0.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "rxjs": "~6.4.0",
     "scss-bundle": "^3.0.1",
     "zone.js": "~0.9.1"
