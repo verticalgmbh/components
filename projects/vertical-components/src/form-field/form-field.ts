@@ -48,7 +48,7 @@ export class VerticalFormField implements AfterContentInit, OnDestroy {
   private _appearance: VerticalFormFieldAppearance;
 
   @ContentChild(VerticalInput, { static: true }) input: VerticalInput;
-  @ContentChild(VerticalFormFieldControl, { static: false }) control: VerticalFormFieldControl<any>;
+  @ContentChild(VerticalFormFieldControl) control: VerticalFormFieldControl<any>;
   @ContentChildren(VerticalPrefix, { descendants: true }) prefixChildren: QueryList<VerticalPrefix>;
   @ContentChildren(VerticalSuffix, { descendants: true }) suffixChildren: QueryList<VerticalSuffix>;
   @ContentChildren(VerticalHint, { descendants: true }) hintChildren: QueryList<VerticalHint>;

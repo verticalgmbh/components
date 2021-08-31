@@ -10,7 +10,7 @@
       "prefix": "vertical",
       "schematics": {
         "@schematics/angular:component": {
-          "styleext": "scss"
+          "style": "scss"
         }
       },
       "architect": {
@@ -20,7 +20,12 @@
             "tsConfig": "projects/vertical-components/tsconfig.lib.json",
             "project": "projects/vertical-components/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/vertical-components/tsconfig.lib.prod.json"
+            }
+          }
+},
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
@@ -58,7 +63,7 @@
             "main": "projects/vertical-components-demo/src/main.ts",
             "polyfills": "projects/vertical-components-demo/src/polyfills.ts",
             "tsConfig": "projects/vertical-components-demo/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "projects/vertical-components-demo/src/favicon.ico",
               "projects/vertical-components-demo/src/assets"
@@ -81,7 +86,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -90,6 +94,10 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             }
