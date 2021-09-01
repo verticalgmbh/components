@@ -1,4 +1,6 @@
+import { ElementRef } from '@angular/core';
 import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { Mock } from '../../test';
 import { VerticalTab } from '../tab/tab.component';
 
 import { VerticalTabGroup } from './tab-group.component';
@@ -6,7 +8,7 @@ import { VerticalTabGroup } from './tab-group.component';
 describe('VerticalTabGroup', () => {
   let component: VerticalTabGroup;
   let fixture: ComponentFixture<VerticalTabGroup>;
-  let tabs = [new VerticalTab()];
+  let tabs: any;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -24,6 +26,8 @@ describe('VerticalTabGroup', () => {
       }
     }
     fixture.detectChanges();
+
+    tabs = [new VerticalTab(new Mock<ElementRef>().instance)];
   });
 
   it('should create', () => {

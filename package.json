@@ -52,10 +52,11 @@
     "chalk": "^3.0.0",
     "fs-extra": "^8.1.0",
     "inquirer": "^7.0.0",
-    "node-sass": "^4.13.0",
-    "rxjs": "~6.4.0",
+    "node-sass": "^4.14.1",
+    "rxjs": "~6.6.7",
     "scss-bundle": "^3.0.1",
-    "zone.js": "~0.9.1"
+    "tslib": "^2.0.0",
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1102.14",

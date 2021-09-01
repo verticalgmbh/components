@@ -16,6 +16,11 @@ export * from './checkbox/checkbox';
 // Form field
 export * from './form-field/form-field.module';
 export * from './form-field/form-field';
+export * from './form-field/directives/error';
+export * from './form-field/directives/hint';
+export * from './form-field/directives/label';
+export * from './form-field/directives/prefix';
+export * from './form-field/directives/suffix';
 
 // Header
 export * from './header/header.module';
