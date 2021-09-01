@@ -17,7 +17,7 @@ async function buildScript() {
   console.log("");
 
   // Build angular packages with ng-packagr
-  await runCmd(`ng build vertical-components`, "Building angular package");
+  await runCmd(`ng build vertical-components --configuration production`, "Building angular package");
 
   // Bundle scss files into _theming.scss file
   await runCmd(`scss-bundle`, "Bundling scss files");
