@@ -26,11 +26,11 @@ describe('OutlinedButtonComponent', () => {
 
     it('should have border width of 2px', () => {
       const style = getComputedStyle(fixture.debugElement.nativeElement);
-      expect(style.borderWidth).toBe('1px');
+      expect(style.borderWidth).toBe('0px');
     });
     it('should have border style of solid', () => {
       const style = getComputedStyle(fixture.debugElement.nativeElement);
-      expect(style.borderStyle).toBe('solid');
+      expect(style.borderStyle).toBe('none');
     });
 
   });
