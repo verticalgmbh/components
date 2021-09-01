@@ -19,5 +19,5 @@ steps:
     npm install
     npm run test
     npm run build
-    npm run deploy
+    npm run deploy test
   displayName: 'Install, test, build and deploy'
