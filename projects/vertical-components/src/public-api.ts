@@ -24,6 +24,11 @@ export * from './header/header';
 // Input
 export * from './input/input.module';
 export * from './input/input';
+export * from './form-field/directives/error';
+export * from './form-field/directives/hint';
+export * from './form-field/directives/label';
+export * from './form-field/directives/prefix';
+export * from './form-field/directives/suffix';
 
 // Tabs
 export * from './tabs/tabs.module';
