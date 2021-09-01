@@ -1,11 +1,12 @@
+@use '~@angular/material' as mat;
 @mixin vertical-form-field-theme($theme) {
   $primary: map-get($theme, primary);
 
   .vertical-form-field-label {
-    color: rgba(mat-contrast($primary, 50), 0.6);
+    color: rgba(mat.get-contrast-color-from-palette($primary, 50), 0.6);
 
     .disabled & {
-      color: rgba(mat-contrast($primary, 50), 0.38);
+      color: rgba(mat.get-contrast-color-from-palette($primary, 50), 0.38);
     }
 
     .error:not(.disabled) & {
@@ -14,34 +15,34 @@
   }
 
   .vertical-form-field-input {
-    background-color: mat-contrast($primary, 900);
+    background-color: mat.get-contrast-color-from-palette($primary, 900);
   }
 
   .vertical-form-field-prefix {
-    color: rgba(mat-contrast($primary, 50), 0.54);
+    color: rgba(mat.get-contrast-color-from-palette($primary, 50), 0.54);
     .disabled & {
-      color: rgba(mat-contrast($primary, 50), 0.38);
+      color: rgba(mat.get-contrast-color-from-palette($primary, 50), 0.38);
     }
   }
 
   .vertical-form-field-infix {
     .disabled & > input {
-      color: rgba(mat-contrast($primary, 50), 0.38);
+      color: rgba(mat.get-contrast-color-from-palette($primary, 50), 0.38);
     }
     .disabled & > input::placeholder {
-      color: rgba(mat-contrast($primary, 50), 0.38);
+      color: rgba(mat.get-contrast-color-from-palette($primary, 50), 0.38);
     }
   }
 
   .vertical-form-field-suffix {
-    color: rgba(mat-contrast($primary, 50), 0.54);
+    color: rgba(mat.get-contrast-color-from-palette($primary, 50), 0.54);
     .disabled & {
-      color: rgba(mat-contrast($primary, 50), 0.38);
+      color: rgba(mat.get-contrast-color-from-palette($primary, 50), 0.38);
     }
   }
 
   .vertical-form-field-hint {
-    color: rgba(mat-contrast($primary, 50), 0.6);
+    color: rgba(mat.get-contrast-color-from-palette($primary, 50), 0.6);
   }
 
   .vertical-form-field-error {
@@ -58,12 +59,12 @@
   .vertical-form-field-appearance-filled {
     .vertical-form-field-input {
       // Using box-shadow instead of border-bottom to inset the indicator.
-      box-shadow: inset 0 -1px 0 rgba(mat-contrast($primary, 50), 0.6);
+      box-shadow: inset 0 -1px 0 rgba(mat.get-contrast-color-from-palette($primary, 50), 0.6);
     }
 
     &.disabled {
       .vertical-form-field-input {
-        box-shadow: inset 0 -1px 0 rgba(mat-contrast($primary, 50), 0.25);
+        box-shadow: inset 0 -1px 0 rgba(mat.get-contrast-color-from-palette($primary, 50), 0.25);
       }
     }
 
@@ -75,8 +76,8 @@
 
     &.focused {
       .vertical-form-field-input {
-        box-shadow: inset 0 -2px 0 mat-color($primary, 900);
-        caret-color: mat-color($primary, 900);
+        box-shadow: inset 0 -2px 0 mat.get-color-from-palette($primary, 900);
+        caret-color: mat.get-color-from-palette($primary, 900);
       }
     }
   }
@@ -88,12 +89,12 @@
   .vertical-form-field-appearance-outlined {
     .vertical-form-field-input {
       // Using box-shadow instead of border-bottom to inset the indicator.
-      box-shadow: inset 0 0 0 1px rgba(mat-contrast($primary, 50), 0.6);
+      box-shadow: inset 0 0 0 1px rgba(mat.get-contrast-color-from-palette($primary, 50), 0.6);
     }
 
     &.disabled {
       .vertical-form-field-input {
-        box-shadow: inset 0 0 0 1px rgba(mat-contrast($primary, 50), 0.25);
+        box-shadow: inset 0 0 0 1px rgba(mat.get-contrast-color-from-palette($primary, 50), 0.25);
       }
     }
 
@@ -105,8 +106,8 @@
 
     &.focused {
       .vertical-form-field-input {
-        box-shadow: inset 0 0 0 2px mat-color($primary, 900);
-        caret-color: mat-color($primary, 900);
+        box-shadow: inset 0 0 0 2px mat.get-color-from-palette($primary, 900);
+        caret-color: mat.get-color-from-palette($primary, 900);
       }
     }
   }

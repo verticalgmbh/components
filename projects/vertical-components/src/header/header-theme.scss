@@ -1,22 +1,23 @@
+@use '~@angular/material' as mat;
 @mixin vertical-header-theme($theme) {
   $primary: map-get($theme, primary);
 
   .vertical-header {
-    background-color: mat-color($primary, 900);
+    background-color: mat.get-color-from-palette($primary, 900);
     &__menu-icon {
-      color: mat-contrast($primary, 900);
+      color: mat.get-contrast-color-from-palette($primary, 900);
     }
 
     &__dropdown {
-      color: mat-contrast($primary, 900);
+      color: mat.get-contrast-color-from-palette($primary, 900);
 
       &:not(:last-child)::after {
-        border-left: 1px solid mat-contrast($primary, 900);
+        border-left: 1px solid mat.get-contrast-color-from-palette($primary, 900);
       }
 
       &:last-child {
         &::before {
-          border-left: 1px solid mat-contrast($primary, 900);
+          border-left: 1px solid mat.get-contrast-color-from-palette($primary, 900);
         }
       }
     }
@@ -26,19 +27,19 @@
 
       &-input {
         &::placeholder {
-          color: rgba(mat-contrast($primary, 900), 0.6);
+          color: rgba(mat.get-contrast-color-from-palette($primary, 900), 0.6);
         }
       }
 
       &.active {
-        background-color: mat-contrast($primary, 900);
+        background-color: mat.get-contrast-color-from-palette($primary, 900);
 
         .vertical-header__search-input {
-          color: mat-color($primary, 900);
+          color: mat.get-color-from-palette($primary, 900);
         }
 
         .vertical-header__search-icon {
-          color: mat-color($primary, 900);
+          color: mat.get-color-from-palette($primary, 900);
 
           &:last-child {
             display: inline-block;
@@ -47,7 +48,7 @@
       }
 
       &-icon {
-        color: mat-contrast($primary, 900);
+        color: mat.get-contrast-color-from-palette($primary, 900);
 
         &:last-child {
           display: none;
@@ -57,12 +58,12 @@
 
     &__cart {
       &-icon {
-        color: mat-contrast($primary, 900);
+        color: mat.get-contrast-color-from-palette($primary, 900);
       }
 
       &-count {
-        background-color: mat-contrast($primary, 900);
-        color: mat-color($primary, 900);
+        background-color: mat.get-contrast-color-from-palette($primary, 900);
+        color: mat.get-color-from-palette($primary, 900);
       }
     }
   }

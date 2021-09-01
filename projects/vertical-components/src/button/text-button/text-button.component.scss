@@ -1,21 +1,22 @@
+@use '~@angular/material' as mat;
 @mixin text-button-theme($theme) {
   $primary: map-get($theme, primary);
 
   .vertical-text-button {
     background-color: transparent;
-    color: mat-color($primary, 900);
+    color: mat.get-color-from-palette($primary, 900);
 
     &:disabled {
-      background-color: rgba(mat-color($primary, 900), 0.12);
-      color: rgba(mat-contrast($primary, 50), 0.38);
+      background-color: rgba(mat.get-color-from-palette($primary, 900), 0.12);
+      color: rgba(mat.get-contrast-color-from-palette($primary, 50), 0.38);
     }
 
     &:not([disabled]):hover {
-      background-color: rgba(mat-color($primary, 700), 0.04);
+      background-color: rgba(mat.get-color-from-palette($primary, 700), 0.04);
     }
 
     .mat-ripple-element {
-      background-color: rgba(mat-color($primary, 700), 0.12);
+      background-color: rgba(mat.get-color-from-palette($primary, 700), 0.12);
     }
   }
 }

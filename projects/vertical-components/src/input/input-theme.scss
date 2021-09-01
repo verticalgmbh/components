@@ -1,12 +1,13 @@
+@use '~@angular/material' as mat;
 @mixin vertical-input-theme($theme) {
   $primary: map-get($theme, primary);
 
   .vertical-input {
     background-color: transparent;
-    color: rgba(mat-contrast($primary, 50), 0.87);
+    color: rgba(mat.get-contrast-color-from-palette($primary, 50), 0.87);
 
     &::placeholder {
-      color: rgba(mat-contrast($primary, 50), 0.54);
+      color: rgba(mat.get-contrast-color-from-palette($primary, 50), 0.54);
     }
   }
 }

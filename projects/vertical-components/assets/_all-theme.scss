@@ -1,5 +1,5 @@
 // Import all theming functionality
-@import "~@angular/material/theming";
+@use '~@angular/material' as mat;
 @import "../src/button/button.scss";
 @import "../src/checkbox/checkbox-theme.scss";
 @import "../src/form-field/form-field-theme.scss";
@@ -9,7 +9,7 @@
 
 // Create a theme
 @mixin vertical-theme($theme) {
-  @include angular-material-theme($theme);
+  @include mat.all-component-themes($theme);
   @include vertical-button-theme($theme);
   @include vertical-checkbox-theme($theme);
   @include vertical-form-field-theme($theme);
