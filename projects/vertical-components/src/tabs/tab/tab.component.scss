@@ -1,26 +1,27 @@
+@use '~@angular/material' as mat;
 @mixin tab-theme($theme) {
   $primary: map-get($theme, primary);
 
   .vertical-tab {
-    color: mat-contrast($primary, 50);
+    color: mat.get-contrast-color-from-palette($primary, 50);
 
     &:not(.vertical-tab-active):hover {
-      box-shadow: inset 0 -1px 0 rgba(mat-contrast($primary, 50), 0.12);
-      background-color: rgba(mat-contrast($primary, 50), 0.04);
+      box-shadow: inset 0 -1px 0 rgba(mat.get-contrast-color-from-palette($primary, 50), 0.12);
+      background-color: rgba(mat.get-contrast-color-from-palette($primary, 50), 0.04);
     }
 
     &-active {
       /* Using box-shadow instead of border-bottom to inset the indicator */
-      box-shadow: inset 0 -2px 0 mat-color($primary, 900);
-      color: mat-color($primary, 900);
+      box-shadow: inset 0 -2px 0 mat.get-color-from-palette($primary, 900);
+      color: mat.get-color-from-palette($primary, 900);
     }
 
     &-active:hover {
-      background-color: rgba(mat-color($primary, 700), 0.04);
+      background-color: rgba(mat.get-color-from-palette($primary, 700), 0.04);
     }
 
     .mat-ripple-element {
-      background-color: rgba(mat-color($primary, 900), 0.1);
+      background-color: rgba(mat.get-color-from-palette($primary, 900), 0.1);
     }
   }
 }
