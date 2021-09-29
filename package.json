@@ -1,6 +1,6 @@
 {
   "name": "vertical-components",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "vertical GmbH UI components",
   "author": {
     "name": "vertical GmbH"
@@ -44,13 +44,13 @@
   "dependencies": {
     "@angular-devkit/schematics": "^12.2.7",
     "@angular/animations": "~12.2.7",
-    "@angular/cdk": "^11.2.13",
+    "@angular/cdk": "^12.2.7",
     "@angular/common": "~12.2.7",
     "@angular/compiler": "~12.2.7",
     "@angular/core": "~12.2.7",
     "@angular/forms": "~12.2.7",
     "@angular/localize": "^12.2.7",
-    "@angular/material": "^11.2.13",
+    "@angular/material": "^12.2.7",
     "@angular/platform-browser": "~12.2.7",
     "@angular/platform-browser-dynamic": "~12.2.7",
     "@angular/router": "~12.2.7",
