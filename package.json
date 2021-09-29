@@ -26,7 +26,9 @@
     "directory": "https://github.com/verticalgmbh/components.git"
   },
   "license": "GPL-3.0-or-later",
-  "resolutions": {"webpack": "^5.0.0"},
+  "resolutions": {
+    "webpack": "^5.0.0"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve vertical-components-demo",
@@ -54,8 +56,8 @@
     "chalk": "^3.0.0",
     "fs-extra": "^8.1.0",
     "inquirer": "^7.0.0",
-    "node-sass": "^4.14.1",
     "rxjs": "~6.6.7",
+    "sass": "^1.42.1",
     "scss-bundle": "^3.0.1",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
