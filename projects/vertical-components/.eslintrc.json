@@ -1,0 +1,64 @@
+{
+  "extends": "../../.eslintrc.json",
+  "ignorePatterns": [
+    "!**/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "parserOptions": {
+        "project": [
+          "projects/vertical-components/tsconfig.lib.json",
+          "projects/vertical-components/tsconfig.spec.json"
+        ],
+        "createDefaultProgram": true
+      },
+      "rules": {
+        "@angular-eslint/component-class-suffix": "off",
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": [
+              "element",
+              "attribute"
+            ],
+            "prefix": "vertical",
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "vertical",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/no-host-metadata-property": "off",
+        "@typescript-eslint/explicit-member-accessibility": [
+          "off",
+          {
+            "accessibility": "explicit"
+          }
+        ],
+        "arrow-parens": [
+          "off",
+          "always"
+        ],
+        "eol-last": "off",
+        "id-blacklist": "off",
+        "id-match": "off",
+        "import/order": "off",
+        "no-underscore-dangle": "off"
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "rules": {}
+    }
+  ]
+}
